@@ -1,0 +1,7 @@
+{
+  "componentsDir": "components",
+  "utilsDir": "utils",
+  "moduleName": "github.com/nicholas-fedor/todo",
+  "jsDir": "assets/js",
+  "jsPublicPath": "/assets/js"
+}

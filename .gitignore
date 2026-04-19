@@ -1,0 +1,47 @@
+# === Dependencies ===
+# Node/Bun dependencies
+node_modules/
+
+# === Build artifacts ===
+# Air live reload temporary binary
+tmp/
+
+# Bundled/compiled outputs
+dist/
+out/
+*.tgz
+
+# TypeScript cache
+*.tsbuildinfo
+
+# === Test coverage ===
+coverage/
+*.lcov
+
+# === Logs ===
+logs/
+*.log
+report.*.json
+
+# === Environment variables ===
+.env
+.env.*.local
+
+# === Runtime data ===
+# BadgerDB storage directory
+data/
+
+# === Caches ===
+.cache/
+.eslintcache
+.parcel-cache
+
+# === IDE / Editor ===
+.idea/
+.vscode/
+
+# === OS generated ===
+.DS_Store
+
+# === Bun specific ===
+.bun/
