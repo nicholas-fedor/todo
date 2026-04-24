@@ -14,10 +14,6 @@ tasks:
     desc: Run templ with integrated server and hot reload using Air
     cmds:
       - air
-    sources:
-      - "**/*.templ"
-    generates:
-      - "**/*_templ.go"
 
   templ-generate:
     desc: Generate templ Go files without hot reload
