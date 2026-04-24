@@ -4,7 +4,7 @@
 # Working directory
 # . or absolute path, please note that the directories following must be under root.
 root = "."
-tmp_dir = "tmp"
+tmp_dir = "bin"
 testdata_dir = "testdata"
 
 # Remove to not load any files whatsoever
@@ -12,18 +12,18 @@ testdata_dir = "testdata"
 env_files = []
 
 [build]
-# Add additional arguments when running binary (bin/full_bin). Will run './tmp/main hello world'.
+# Add additional arguments when running binary (bin/full_bin). Will run './bin/todo'.
 args_bin = []
 # Binary file yields from 'cmd', will be deprecated soon, recommend using entrypoint.
-bin = "./tmp/main"
+bin = "./bin/todo"
 # Just plain old shell command. You could use `make` as well.
-cmd = "templ generate && go build -o ./tmp/main cmd/server/main.go"
+cmd = "templ generate && go build -o ./bin/todo cmd/server/main.go"
 # It's not necessary to trigger build each time file changes if it's too frequent.
 delay = 1000
 # Entrypoint binary relative to root. First item is the executable, more items are default arguments.
-entrypoint = ["./tmp/main"]
+entrypoint = ["./bin/todo"]
 # Ignore these filename extensions or directories.
-exclude_dir = ["assets", "tmp", "vendor", "testdata"]
+exclude_dir = ["assets", "bin", "vendor", "testdata"]
 # Exclude files.
 exclude_file = []
 # Exclude specific regular expressions.
