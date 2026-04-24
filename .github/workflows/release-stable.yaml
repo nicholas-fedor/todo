@@ -40,6 +40,3 @@ jobs:
       docker_namespace: nickfedor
       ghcr_namespace: nicholas-fedor
       environment: CI
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }} # Docker Hub username
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }} # Docker Hub token

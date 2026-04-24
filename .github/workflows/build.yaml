@@ -103,7 +103,7 @@ jobs:
       - name: Login to Docker Hub # Authenticate to Docker Hub
         if: ${{ !inputs.dry-run }}
         uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v3
-        with:
+        env:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
@@ -125,9 +125,9 @@ jobs:
           version: "~> v2"
           args: release --config build/goreleaser/${{ inputs.build-type }}.yml ${{ inputs.build-type == 'nightly' && '--snapshot' || '' }} --clean ${{ inputs.dry-run && '--skip=publish' || '' }}
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCKER_NAMESPACE: ${{ inputs.docker_namespace }}
           GHCR_NAMESPACE: ${{ inputs.ghcr_namespace }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: ${{ inputs.dry-run }}
 
       - name: Upload binary SBOMs
