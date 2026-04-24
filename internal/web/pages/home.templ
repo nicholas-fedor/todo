@@ -1,0 +1,132 @@
+package pages
+
+import (
+	"github.com/nicholas-fedor/todo/internal/types"
+	"github.com/nicholas-fedor/todo/internal/web/components/button"
+	"github.com/nicholas-fedor/todo/internal/web/components/card"
+	"github.com/nicholas-fedor/todo/internal/web/components/checkbox"
+	"github.com/nicholas-fedor/todo/internal/web/components/input"
+	"github.com/nicholas-fedor/todo/internal/web/components/label"
+	"github.com/nicholas-fedor/todo/internal/web/components/separator"
+)
+
+templ Home(todos []types.TodoItem) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<title>Todos</title>
+			<link rel="stylesheet" href="/assets/css/output.css"/>
+			<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
+			@checkbox.Script()
+			@input.Script()
+		</head>
+		<body class="min-h-screen bg-background p-8">
+			<div class="mx-auto max-w-lg">
+				@card.Card() {
+					@card.Header() {
+						@card.Title() {
+							Todos
+						}
+						@card.Description() {
+							Keep track of what needs to get done.
+						}
+					}
+					@card.Content() {
+						<form
+							hx-post="/todos"
+							hx-target="#todo-list"
+							hx-select="#todo-list"
+							hx-swap="innerHTML"
+							class="flex gap-2 mb-4"
+						>
+							@input.Input(input.Props{
+								Name:        "title",
+								Placeholder: "Add a new todo...",
+								Required:    true,
+							})
+							@button.Button(button.Props{
+								Type:    button.TypeSubmit,
+								Variant: button.VariantDefault,
+							}) {
+								Add
+							}
+						</form>
+						@separator.Separator()
+						@TodoList(todos)
+					}
+				}
+			</div>
+		</body>
+	</html>
+}
+
+// TodoList renders the todo list fragment for htmx partial updates
+// TodoList renders only the todo list fragment for htmx partial updates.
+templ TodoList(todos []types.TodoItem) {
+	<div id="todo-list" class="space-y-2 mt-4">
+		for _, todo := range todos {
+			<div class="flex items-center gap-3 py-2">
+				@checkbox.Checkbox(checkbox.Props{
+					ID:      "todo-" + todo.Key,
+					Checked: todo.Completed,
+					Attributes: templ.Attributes{
+						"hx-put":     "/todos/" + extractID(todo.Key) + "/toggle",
+						"hx-target":  "#todo-list",
+						"hx-select":  "#todo-list",
+						"hx-swap":    "innerHTML",
+						"hx-trigger": "change",
+					},
+				})
+				@label.Label(label.Props{
+					For: "todo-" + todo.Key,
+					Class: IfCompleted(
+						todo.Completed,
+						"line-through text-muted-foreground cursor-pointer", "cursor-pointer",
+					),
+				}) {
+					{ todo.Title }
+				}
+				<div class="ml-auto">
+					@button.Button(button.Props{
+						Variant: button.VariantGhost,
+						Size:    button.SizeSm,
+						Attributes: templ.Attributes{
+							"hx-delete":  "/todos/" + extractID(todo.Key),
+							"hx-target":  "#todo-list",
+							"hx-select":  "#todo-list",
+							"hx-swap":    "innerHTML",
+							"hx-confirm": "Delete this todo?",
+						},
+					}) {
+						Delete
+					}
+				</div>
+			</div>
+		}
+		if len(todos) == 0 {
+			<div class="text-center py-8 text-muted-foreground">
+				No todos yet. Add one above!
+			</div>
+		}
+	</div>
+}
+
+func IfCompleted(completed bool, trueVal, falseVal string) string {
+	if completed {
+		return trueVal
+	}
+
+	return falseVal
+}
+
+// extractID strips the "todo:" prefix from a storage key.
+func extractID(key string) string {
+	const prefix = "todo:"
+	if len(key) > len(prefix) {
+		return key[len(prefix):]
+	}
+
+	return key
+}

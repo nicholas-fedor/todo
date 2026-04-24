@@ -1,19 +1,45 @@
+<!-- markdownlint-disable -->
+<div align="center">
+
 # Todo
 
-Basic todo web app for testing. Built with Go, Fiber, templ, Tailwind CSS, BadgerDB, and HTMX.
+<img src=".github/assets/todo.png" alt="todo logo" width="128"/>
+
+A basic todo web app for testing.
+Built with Go, Fiber, templ, Tailwind CSS, BadgerDB, and HTMX.
+
+<br/><br/>
+<!-- markdownlint-restore -->
+</div>
 
 ## Quick Start
 
 ```bash
+# Install Go dependencies
 go mod download
+
+# Install Tailwind CSS via npm/bun (dev dependency)
+# The project uses bun for package management
 bun install
+
+# Or using npm:
+# npm install
+
+# Install development tools (optional, for hot-reload)
+go install github.com/air-verse/air@latest
+go install github.com/a-h/templ/cmd/templ@latest
+
+# Start development server
 task dev  # http://localhost:3000
 ```
 
 ## Production
 
 ```bash
-templ generate && go build -o todo .
+# Generate templates and build
+templ generate && go build -o todo ./cmd/server
+
+# Run
 ./todo  # Listens on :3000
 ```
 

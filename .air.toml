@@ -17,7 +17,7 @@ args_bin = []
 # Binary file yields from 'cmd', will be deprecated soon, recommend using entrypoint.
 bin = "./tmp/main"
 # Just plain old shell command. You could use `make` as well.
-cmd = "templ generate && go build -o ./tmp/main ."
+cmd = "templ generate && go build -o ./tmp/main cmd/server/main.go"
 # It's not necessary to trigger build each time file changes if it's too frequent.
 delay = 1000
 # Entrypoint binary relative to root. First item is the executable, more items are default arguments.

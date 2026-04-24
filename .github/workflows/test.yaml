@@ -1,0 +1,52 @@
+name: Run tests and upload coverage
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run tests and collect coverage
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Go
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v5
+        with:
+          go-version-file: "go.mod"
+          cache: true
+          cache-dependency-path: |
+            go.mod
+            **/go.sum
+
+      - name: Install templ
+        run: go install github.com/a-h/templ/cmd/templ@5ddd784440b232930161d76c7ca85d922fdcf183 # v0.3.1001
+
+      - name: Install dependencies
+        run: go mod download
+
+      - name: Generate templates
+        run: templ generate ./...
+
+      - name: Run tests
+        run: |
+          go test -race -v -coverprofile coverage.out -covermode atomic ./...

@@ -1,7 +1,7 @@
 {
-  "componentsDir": "components",
-  "utilsDir": "utils",
+  "componentsDir": "internal/web/components",
+  "utilsDir": "internal/utils",
   "moduleName": "github.com/nicholas-fedor/todo",
-  "jsDir": "assets/js",
+  "jsDir": "internal/web/assets/js",
   "jsPublicPath": "/assets/js"
 }

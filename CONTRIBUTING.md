@@ -17,29 +17,29 @@ See the sections below for detailed tool installation and configuration.
 ## Project Structure
 
 ```text
-├── main.go                  # Fiber app setup and routes
-├── go.mod                   # Go dependencies
-├── package.json             # Node dependencies (Tailwind CLI)
-├── Taskfile.yml             # Development tasks (dev, tailwind, templ)
-├── .air.toml                # Air configuration
-├── .templui.json            # TemplUI CLI configuration
-├── assets/                  # Embedded static assets
-│   ├── css/
-│   │   ├── input.css
-│   │   └── output.css
-│   └── js/                  # Component JavaScript (populated by templui)
-├── components/              # Local TemplUI component overrides
+├── cmd/
+│   └── server/
+│       └── main.go          # Fiber app setup and routes
 ├── internal/
-│   ├── handler/            # HTTP handlers (home, create, toggle, delete)
-│   ├── middleware/         # 404 catch-all
-│   └── models/            # Todo data structures
+│   ├── handlers/            # HTTP handlers (home, create, toggle, delete)
+│   ├── middleware/          # 404 catch-all middleware
+│   ├── storage/             # BadgerDB store abstraction
+│   └── web/                 # Templ UI components & embedded assets
+│       ├── assets/
+│       │   ├── css/         # Tailwind input.css & output.css
+│       │   └── js/          # Component JavaScript (embedded)
+│       ├── components/      # TemplUI component wrappers
+│       ├── pages/           # Top-level templ pages (home, notfound)
+│       └── embed.go         # //go:embed assets
 ├── pkg/
-│   ├── pages/             # Top-level templ pages (home, notfound)
-│   └── todo/              # Todo business logic
-├── storage/               # BadgerDB store abstraction
-│   ├── storage.go         # Interface
-│   └── badger.go          # Implementation
-└── data/                  # BadgerDB data directory (created at runtime)
+│   └── todo/                # Todo business logic
+├── data/                    # BadgerDB data directory (created at runtime)
+├── .templui.json            # TemplUI configuration
+├── .air.toml                # Air hot-reload configuration
+├── Taskfile.yml             # Development tasks
+├── go.mod                   # Go dependencies
+├── package.json             # Node dependencies (if using bun for Tailwind)
+└── README.md               # Project overview
 ```
 
 ---
@@ -90,20 +90,17 @@ go get github.com/gofiber/fiber/v3
 package main
 
 import (
-    "embed"
     "io/fs"
 
     "github.com/gofiber/fiber/v3"
     "github.com/gofiber/fiber/v3/log"
     "github.com/gofiber/fiber/v3/middleware/favicon"
     "github.com/gofiber/fiber/v3/middleware/static"
-    "github.com/nicholas-fedor/todo/internal/handler"
+    "github.com/nicholas-fedor/todo/internal/handlers"
     "github.com/nicholas-fedor/todo/internal/middleware"
-    "github.com/nicholas-fedor/todo/storage"
+    "github.com/nicholas-fedor/todo/internal/storage"
+    "github.com/nicholas-fedor/todo/internal/web"
 )
-
-//go:embed assets
-var assetsFS embed.FS
 
 func main() {
     store, err := storage.NewBadgerStore(storage.BadgerOptions{Dir: "data"})
@@ -112,17 +109,17 @@ func main() {
     }
     defer store.Close()
 
-    assetFS, _ := fs.Sub(assetsFS, "assets")
-    faviconFS, _ := fs.Sub(assetsFS, "assets/images")
+    assetFS, _ := fs.Sub(web.Assets, "assets")
+    faviconFS, _ := fs.Sub(web.Assets, "assets/images")
 
     app := fiber.New()
     app.Use(favicon.New(favicon.Config{File: "favicon.ico", FileSystem: faviconFS}))
 
     app.Get("/assets*", static.New("", static.Config{FS: assetFS}))
-    app.Get("/", handler.HomeHandler(store))
-    app.Post("/todos", handler.CreateHandler(store))
-    app.Put("/todos/:id/toggle", handler.ToggleHandler(store))
-    app.Delete("/todos/:id", handler.DeleteHandler(store))
+    app.Get("/", handlers.HomeHandler(store))
+    app.Post("/todos", handlers.CreateHandler(store))
+    app.Put("/todos/:id/toggle", handlers.ToggleHandler(store))
+    app.Delete("/todos/:id", handlers.DeleteHandler(store))
     app.Use(middleware.NotFoundMiddleware)
 
     log.Fatal(app.Listen(":3000"))
@@ -163,7 +160,7 @@ When a `.templ` file changes, Air's `cmd` config re-runs `templ generate` before
 Render a templ component by calling it from `pkg/pages`:
 
 ```go
-import "github.com/nicholas-fedor/todo/pkg/pages"
+import "github.com/nicholas-fedor/todo/internal/web/pages"
 
 todos, _ := todo.ListTodos(store)
 return Render(c, pages.Home(todos))
@@ -176,93 +173,87 @@ return Render(c, pages.Home(todos))
 
 ---
 
-### TemplUI
+### templui CLI (Optional)
 
-Pre-built component library for templ. Provides buttons, cards, inputs, dialogs, tables, etc.
+The `templui` CLI tool provides component discovery, scaffolding, and vendor management. Not required for the import workflow but useful for exploration and local component overrides.
 
-#### Docs
-
-<https://templui.io/>
-
-#### Component Installation
-
-#### Option A — Import from upstream (simpler, references remote module)
-
-```go
-import "github.com/templui/templui/components/button"
-
-@button.Button() {
-    Click me
-}
-```
-
-#### Option B — Vendor locally (downloads source into project)
+#### Install templui CLI
 
 ```bash
+go install github.com/templui/templui/cmd/templui@latest
+templui --version
+```
+
+#### Useful Commands
+
+```bash
+# Initialize project config (only needed for CLI workflow)
+templui init
+
+# List available components
+templui list
+
+# Add a component to local components/ directory
 templui add button
+
+# Update all vendored components
+templui update
 ```
 
-Then import from your project path:
+#### When to Use
 
-```go
-import "github.com/nicholas-fedor/todo/components/button"
-```
+- **Import workflow** (current project): Just `go get github.com/templui/templui@latest`, no CLI needed.
+- **CLI workflow**: Use `templui` to copy component source into your project for customization.
 
-Option B lets you customize components locally.
-
-#### Interactive Components Need Scripts
-
-Components with JavaScript behavior (checkbox, datepicker, input, etc.) require:
-
-```templ
-<head>
-    @checkbox.Script()
-    @datepicker.Script()
-</head>
-```
-
-The `Script()` call generates the appropriate `<script src="...">` tag pointing to `assets/js/` (populated by `templui add`). For debugging, set `utils.UseUnminifiedScripts = true` in `main.go`.
-
-#### Key Files
-
-- `.templui.json` — module name, directories
-- `components/` — vendored component overrides
-- `assets/js/` — component JavaScript files
-
-#### TemplUI Resources
+#### templui Resources
 
 - Getting started: <https://templui.io/docs/how-to-use>
-- CLI: <https://templui.io/docs/cli>
+- CLI reference: <https://templui.io/docs/cli>
+- Workflows: <https://templui.io/docs/workflows/>
 
 ---
 
-### Tailwind CSS v4
+### Tailwind CSS v4.1+
 
-Utility-first CSS framework. Project uses Tailwind CLI (no config file).
+Tailwind CSS standalone CLI is required. This project uses the npm package via `bun` or `npm`.
 
-#### Install Dependencies
+#### Installation
 
 ```bash
+# Using bun (recommended for this project)
 bun init -y
 bun add -D tailwindcss
+
+# Or using npm
+npm install -D tailwindcss
+
+# Or download standalone binary from:
+# https://github.com/tailwindlabs/tailwindcss/releases
 ```
 
 #### Build CSS
 
-Input: `assets/css/input.css` (source with `@import` directives and custom rules)
-Output: `assets/css/output.css` (compiled, referenced in templates)
+Input: `internal/web/assets/css/input.css` (source with `@import` directives and custom rules)
+Output: `internal/web/assets/css/output.css` (compiled, referenced in templates)
 
 ```bash
-bunx @tailwindcss/cli -i assets/css/input.css -o assets/css/output.css
+# Using bunx (from node_modules/.bin)
+bunx @tailwindcss/cli -i internal/web/assets/css/input.css -o internal/web/assets/css/output.css
+
+# Or using npx
+npx @tailwindcss/cli -i internal/web/assets/css/input.css -o internal/web/assets/css/output.css
+
+# Or if using standalone binary
+tailwindcss -i internal/web/assets/css/input.css -o internal/web/assets/css/output.css
 ```
 
 #### Watch During Development
 
 ```bash
-bunx @tailwindcss/cli -i assets/css/input.css -o assets/css/output.css --watch
+bunx @tailwindcss/cli -i internal/web/assets/css/input.css -o internal/web/assets/css/output.css --watch
 ```
 
-Or via Taskfile: `task tailwind`
+Or via Taskfile: `task tailwind-build` (one-shot) or `task tailwind` (watch mode)
 
 #### Link in Templates
 
@@ -392,10 +383,10 @@ All endpoints return HTML. Static assets at `/assets*`. Non-asset handlers can r
 
 | Method | Route | Handler | Purpose |
 | -------- | ------- | ---------- | ---------- |
-| `GET` | `/` | `handler.HomeHandler` | Render home page with all todos |
-| `POST` | `/todos` | `handler.CreateHandler` | Create todo from `title` form field |
-| `PUT` | `/todos/:id/toggle` | `handler.ToggleHandler` | Flip `completed` boolean |
-| `DELETE` | `/todos/:id` | `handler.DeleteHandler` | Remove todo by key |
+| `GET` | `/` | `handlers.HomeHandler` | Render home page with all todos |
+| `POST` | `/todos` | `handlers.CreateHandler` | Create todo from `title` form field |
+| `PUT` | `/todos/:id/toggle` | `handlers.ToggleHandler` | Flip `completed` boolean |
+| `DELETE` | `/todos/:id` | `handlers.DeleteHandler` | Remove todo by key |
 
 Request/response content-type: HTML (or fragments). The `CreateHandler`, `ToggleHandler`, and `DeleteHandler` delegate to `HomeHandler` to re-render the list after mutation.
 
@@ -469,25 +460,25 @@ If not using Air/Task:
 
 ```bash
 # One-off: generate templates and run
-templ generate && go run .
+templ generate && go run ./cmd/server
 
 # Generate templates only (produces *_templ.go)
 templ generate
 
 # Build CSS (no watch)
-bunx @tailwindcss/cli -i assets/css/input.css -o assets/css/output.css
+tailwindcss -i internal/web/assets/css/input.css -o internal/web/assets/css/output.css
 
 # Build binary
-templ generate && go build -o todo .
+templ generate && go build -o todo ./cmd/server
 ```
 
 ---
 
 ## Production Notes
 
-- Single binary: `//go:embed` bundles `assets/` at compile time
+- Single binary: `//go:embed` bundles `internal/web/assets/` at compile time
 - No external files needed at runtime
-- Static middleware serves `/assets*` from embedded FS via `fs.Sub(assetsFS, "assets")`
+- Static middleware serves `/assets*` from embedded FS via `fs.Sub(web.Assets, "assets")`
 - Server listens on `:3000` (no HTTPS, no reverse-proxy config — add as needed)
 - Ensure `data/` directory is writable by the process
 
@@ -503,16 +494,16 @@ templ generate && go build -o todo .
 ### CSS changes not appearing?
 
 - Tailwind watch must be running (`task dev` or `task tailwind`)
-- Check `assets/css/input.css` imports the template sources via `@source` directives (auto-generated by Task)
+- Check `internal/web/assets/css/input.css` imports the template sources via `@source` directives (auto-generated by Task)
 
 ### Assets 404?
 
 - Static route registered: `app.Get("/assets*", static.New(...))`
-- Embedded FS sub-rooted correctly: `fs.Sub(assetsFS, "assets")`
+- Embedded FS sub-rooted correctly: `fs.Sub(web.Assets, "assets")`
 
 ### Port already in use?
 
-- Server hardcoded to `:3000` in `main.go:107`. Change or use `pkill -f todo`.
+- Server hardcoded to `:3000` in `cmd/server/main.go:104`. Change or use `pkill -f todo`.
 
 ---
 
