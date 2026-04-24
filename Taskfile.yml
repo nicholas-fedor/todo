@@ -57,40 +57,51 @@ tasks:
 
   # Go Application Tasks
 
-  go-build:
+  build:
     desc: Build Go binary
     cmds:
       - go build -o bin/todo ./...
 
-  go-run:
+  run:
     desc: Run Go application
     cmds:
       - go run ./cmd/server
 
-  go-test:
+  test:
     desc: Run Go tests
     cmds:
-      - go test -v ./...
+      - go test -test.fullpath=true -timeout 30s -covermode atomic -v ./...
 
-  go-test-coverage:
+  test-coverage:
     desc: Run Go tests with coverage
     cmds:
-      - go test -coverprofile=coverage.out -covermode=atomic ./...
+      - go test  -test.fullpath=true -timeout 30s -covermode=atomic -v  -coverprofile=coverage.out ./...
 
-  go-lint:
+  bench:
+    desc: Run benchmarks
+    cmds:
+      - go test -bench=. -benchmem ./...
+
+  lint:
     desc: Run linter
     cmds:
-      - golangci-lint run ./...
+      - golangci-lint run --fix --config build/golangci-lint/golangci-lint.yaml ./...
 
-  go-vet:
+  fmt:
+    desc: Run fmt
+    cmds:
+      - golangci-lint fmt --config build/golangci-lint/golangci-lint.yaml ./...
+
+  vet:
     desc: Run go vet
     cmds:
       - go vet ./...
 
-  go-tidy:
+  tidy:
     desc: Tidy Go modules
     cmds:
       - go mod tidy
+      - go mod verify
 
   # Utility Tasks
 
