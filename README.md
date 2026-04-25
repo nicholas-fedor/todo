@@ -162,7 +162,7 @@ cd todo
 Full installation using Make (installs tools, generates assets, builds, and installs binary):
 
 ```bash
-sudo make install
+make install
 ```
 
 Or using Task:
@@ -171,7 +171,7 @@ Or using Task:
 task install
 ```
 
-The binary is installed to `$GOPATH/bin` (typically `~/go/bin/todo`).
+The binary is installed to the invoking user's `$GOPATH/bin` (typically `~/go/bin/todo`). Using `sudo` would install to root's `$GOPATH` instead.
 
 Alternatively, use `go install` for direct installation (requires Go toolchain):
 
