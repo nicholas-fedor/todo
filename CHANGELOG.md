@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
+### Chores
 
-- Update Dockerfile to support GoReleaser dockers_v2 by @nicholas-fedor in [#14](https://github.com/nicholas-fedor/todo/pull/14)
+- Fix broken comment by @nicholas-fedor in [#16](https://github.com/nicholas-fedor/todo/pull/16)
 
 ## [0.1.0] - 2026-04-25
 
@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update Dockerfile to support GoReleaser dockers_v2 by @nicholas-fedor in [#14](https://github.com/nicholas-fedor/todo/pull/14)
 - Set build id to static value by @nicholas-fedor in [#10](https://github.com/nicholas-fedor/todo/pull/10)
 - Enable verifiable builds by using package directory for main by @nicholas-fedor in [#8](https://github.com/nicholas-fedor/todo/pull/8)
 - Reorganize project structure and add CI/CD infrastructure by @nicholas-fedor in [#1](https://github.com/nicholas-fedor/todo/pull/1)
@@ -37,8 +38,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New Contributors
 
-- @nicholas-fedor made their first contribution in [#12](https://github.com/nicholas-fedor/todo/pull/12)
-- @github-actions[bot] made their first contribution in [#11](https://github.com/nicholas-fedor/todo/pull/11)
+- @nicholas-fedor made their first contribution in [#14](https://github.com/nicholas-fedor/todo/pull/14)
+- @github-actions[bot] made their first contribution in [#13](https://github.com/nicholas-fedor/todo/pull/13)
 
 ## Compare Releases
 
