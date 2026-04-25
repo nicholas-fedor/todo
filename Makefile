@@ -160,7 +160,7 @@ dev: ## Start full development stack (Templ + Tailwind + Go)
 	@echo ""
 	@# Start both processes in parallel and wait
 	@( \
-		TEMPLUI_PATH="$$(go list -mod=mod -m -f '{'{{.Dir}'}}' github.com/templui/templui)" && \
+ 		TEMPLUI_PATH="$$(go list -mod=mod -m -f '{{.Dir}}' github.com/templui/templui)" && \
 		printf '%s\n' '@source "./**/*.templ";' "@source \"$$TEMPLUI_PATH/components/**/*.templ\";" > ./internal/web/assets/css/sources.generated.css && \
 		bunx @tailwindcss/cli -i ./internal/web/assets/css/input.css -o ./internal/web/assets/css/output.css --watch \
 	) & \
