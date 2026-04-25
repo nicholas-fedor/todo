@@ -32,7 +32,7 @@ Or the GitHub Container Registry image:
 docker run -p 3000:3000 -v todo-data:/data ghcr.io/nicholas-fedor/todo:latest
 ```
 
-The app will be available at http://localhost:3000.
+The app will be available at <http://localhost:3000>.
 
 #### Notes
 
@@ -58,13 +58,14 @@ services:
 volumes:
   todo-data:
 ```
+
 #### Start the service
 
 ```bash
 docker compose up -d
 ```
 
-- The app will be available at http://localhost:3000.
+- The app will be available at <http://localhost:3000>.
 
 #### Stop the service
 
@@ -74,9 +75,27 @@ docker compose down
 
 #### Remove the `todo-data` Docker volume
 
+The preferred method is to use `docker compose down -v`, which stops the stack and removes all volumes regardless of project name:
+
+```bash
+docker compose down -v
+```
+
+Alternatively, you can remove the volume directly:
+
 ```bash
 docker volume rm todo_todo-data
 ```
+
+Note that this command assumes the default project name `todo` (derived from the directory name). If a different project name is used, the volume name will be prefixed accordingly (e.g., `${project_name}_todo-data`).
+
+To ensure consistent volume naming, you can pin the project name by adding a `name` field to `docker-compose.yml`:
+
+```yaml
+name: todo
+```
+
+With this configuration, the volume will always be named `todo_todo-data` regardless of the directory name.
 
 ## Installation
 
@@ -98,7 +117,7 @@ docker run -p 8080:3000 -v todo-data:/data nickfedor/todo:latest
 ```
 
 - The `-p 8080:3000` flag maps host port 8080 to container port 3000.
-- The app will be available at http://localhost:8080 in this configuration.
+- The app will be available at <http://localhost:8080> in this configuration.
 
 #### Storage
 
