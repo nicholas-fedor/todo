@@ -41,7 +41,7 @@ The app will be available at http://localhost:3000.
 
 ### Docker Compose
 
-The following [`docker-compose.yml`](docker-compose.yml) configuration file is preferrable for actual deployments:
+The following [`docker-compose.yml`](docker-compose.yml) configuration file is preferable for actual deployments:
 
 ```yaml
 services:
