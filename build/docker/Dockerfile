@@ -14,8 +14,9 @@ FROM scratch
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 
-# Copy the binary built by goreleaser
-COPY todo /todo
+# Copy the binary built by GoReleaser (dockers_v2 puts it under $TARGETPLATFORM/)
+ARG TARGETPLATFORM
+COPY --chmod=0755 $TARGETPLATFORM/todo /todo
 
 # Expose the application port
 EXPOSE 3000
