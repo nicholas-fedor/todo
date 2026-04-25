@@ -14,9 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initialize project structure by @nicholas-fedor
 - Initial commit by @nicholas-fedor
 
+### Fixed
+
+- Fix git-cliff null reference error by @nicholas-fedor in [#2](https://github.com/nicholas-fedor/todo/pull/2)
+
 ### New Contributors
 
-- @nicholas-fedor made their first contribution in [#1](https://github.com/nicholas-fedor/todo/pull/1)
+- @nicholas-fedor made their first contribution in [#2](https://github.com/nicholas-fedor/todo/pull/2)
 
 ## Compare Releases
 
