@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Enable cosign image digest signing by @nicholas-fedor in [#17](https://github.com/nicholas-fedor/todo/pull/17)
+
 ### Chores
 
 - Fix broken comment by @nicholas-fedor in [#16](https://github.com/nicholas-fedor/todo/pull/16)
