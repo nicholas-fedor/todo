@@ -153,7 +153,7 @@ tasks:
         echo "Checking required tools:"
         echo ""
         echo "  bun ([install](https://bun.com/docs/installation)): $(bun --version >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — see: https://bun.com/docs/installation')"
-        echo "  tailwindcss (via bunx): $(bunx @tailwindcss/cli --version >/dev/null 2>&1 && echo 'available' || echo 'NOT accessible (run: bun install')"
+        echo "  tailwindcss (via bunx): $(bunx `@tailwindcss/cli` --version >/dev/null 2>&1 && echo 'available' || echo 'NOT accessible (run: bun install)')"
         echo "  templ: $(command -v templ >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/a-h/templ/cmd/templ@latest')"
         echo "  templui CLI: $(command -v templui >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/templui/templui/cmd/templui@latest')"
         echo "  task: $(command -v task >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/go-task/task/v3/cmd/task@latest')"
