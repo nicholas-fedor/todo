@@ -25,7 +25,7 @@ COPY --chmod=0755 ${TARGETPLATFORM}/todo /todo
 # Run as non-root using the standard distroless UID/GID (best practice)
 USER 65532
 
-# Copy the binary built by GoReleaser (dockers_v2 puts
+# Expose the application port
 EXPOSE 3000
 
 # Set the entrypoint
