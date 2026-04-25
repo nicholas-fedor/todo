@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add changelog pr automerge step by @nicholas-fedor in [#4](https://github.com/nicholas-fedor/todo/pull/4)
+
 ### Changed
 
 - Reorganize project structure and add CI/CD infrastructure by @nicholas-fedor in [#1](https://github.com/nicholas-fedor/todo/pull/1)
@@ -20,7 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New Contributors
 
-- @nicholas-fedor made their first contribution in [#2](https://github.com/nicholas-fedor/todo/pull/2)
+- @nicholas-fedor made their first contribution in [#4](https://github.com/nicholas-fedor/todo/pull/4)
+- @github-actions[bot] made their first contribution in [#3](https://github.com/nicholas-fedor/todo/pull/3)
 
 ## Compare Releases
 
