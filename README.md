@@ -8,7 +8,7 @@
 A basic todo web app project for testing and breaking things.
 Built with [Go](https://go.dev/), [BadgerDB](https://github.com/dgraph-io/badger), [Fiber](https://github.com/gofiber/fiber), [templ](https://github.com/a-h/templ), [templUI](https://github.com/templui/templui), [Tailwind CSS](https://tailwindcss.com/), and [HTMX](https://htmx.org/).
 
-<!-- markownlint-restore -->
+<!-- markdownlint-restore -->
 </div>
 
 > [!WARNING]
