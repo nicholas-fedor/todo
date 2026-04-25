@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add volume mountpoint by @nicholas-fedor in [#20](https://github.com/nicholas-fedor/todo/pull/20)
+
 ### Changed
 
 - Enable cosign image digest signing by @nicholas-fedor in [#17](https://github.com/nicholas-fedor/todo/pull/17)
