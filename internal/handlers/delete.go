@@ -15,7 +15,8 @@ func DeleteHandler(store storage.Store) fiber.Handler {
 		id := c.Params("id")
 		key := "todo:" + id
 
-		if err := store.Delete(key); err != nil {
+		err := store.Delete(key)
+		if err != nil {
 			return c.Status(fiber.StatusInternalServerError).
 				SendString("failed to delete")
 		}

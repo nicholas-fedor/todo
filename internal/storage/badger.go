@@ -1,3 +1,4 @@
+// Package storage provides a BadgerDB-backed implementation of the Store interface.
 package storage
 
 import (
@@ -71,7 +72,7 @@ func (s *BadgerStore) Get(key string) ([]byte, error) {
 		},
 	)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("view: %w", err)
 	}
 
 	return value, nil
@@ -79,7 +80,7 @@ func (s *BadgerStore) Get(key string) ([]byte, error) {
 
 // Set stores the value for the given key.
 func (s *BadgerStore) Set(key string, value []byte) error {
-	return s.db.Update(func(txn *badger.Txn) error {
+	err := s.db.Update(func(txn *badger.Txn) error {
 		err := txn.Set([]byte(key), value)
 		if err != nil {
 			return fmt.Errorf("set: %w", err)
@@ -87,11 +88,16 @@ func (s *BadgerStore) Set(key string, value []byte) error {
 
 		return nil
 	})
+	if err != nil {
+		return fmt.Errorf("update: %w", err)
+	}
+
+	return nil
 }
 
 // SetWithTTL stores the value for the given key with an expiration time.
 func (s *BadgerStore) SetWithTTL(key string, value []byte, ttl time.Duration) error {
-	return s.db.Update(func(txn *badger.Txn) error {
+	err := s.db.Update(func(txn *badger.Txn) error {
 		entry := badger.NewEntry([]byte(key), value).WithTTL(ttl)
 
 		err := txn.SetEntry(entry)
@@ -101,11 +107,16 @@ func (s *BadgerStore) SetWithTTL(key string, value []byte, ttl time.Duration) er
 
 		return nil
 	})
+	if err != nil {
+		return fmt.Errorf("update: %w", err)
+	}
+
+	return nil
 }
 
 // Delete removes the key from the store.
 func (s *BadgerStore) Delete(key string) error {
-	return s.db.Update(func(txn *badger.Txn) error {
+	err := s.db.Update(func(txn *badger.Txn) error {
 		err := txn.Delete([]byte(key))
 		if err != nil {
 			return fmt.Errorf("delete: %w", err)
@@ -113,6 +124,11 @@ func (s *BadgerStore) Delete(key string) error {
 
 		return nil
 	})
+	if err != nil {
+		return fmt.Errorf("update: %w", err)
+	}
+
+	return nil
 }
 
 // Has checks whether the key exists in the store.
@@ -136,7 +152,7 @@ func (s *BadgerStore) Has(key string) (bool, error) {
 		return nil
 	})
 	if err != nil {
-		return false, err
+		return false, fmt.Errorf("view: %w", err)
 	}
 
 	return exists, nil

@@ -1,7 +1,9 @@
+// Package app provides the application layer business logic.
 package app
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/nicholas-fedor/todo/internal/storage"
 	"github.com/nicholas-fedor/todo/internal/types"
@@ -11,7 +13,7 @@ import (
 func ListTodos(store storage.Store) ([]types.TodoItem, error) {
 	keys, err := store.List()
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("list todos: %w", err)
 	}
 
 	todos := make([]types.TodoItem, 0, len(keys))
@@ -22,7 +24,9 @@ func ListTodos(store storage.Store) ([]types.TodoItem, error) {
 		}
 
 		var todo types.TodoItem
-		if err := json.Unmarshal(val, &todo); err != nil {
+
+		err = json.Unmarshal(val, &todo)
+		if err != nil {
 			continue
 		}
 

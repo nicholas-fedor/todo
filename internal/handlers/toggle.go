@@ -32,7 +32,9 @@ func ToggleHandler(store storage.Store) fiber.Handler {
 		}
 
 		var todoItem types.TodoItem
-		if err := json.Unmarshal(val, &todoItem); err != nil {
+
+		err = json.Unmarshal(val, &todoItem)
+		if err != nil {
 			return c.Status(
 				fiber.StatusInternalServerError).
 				SendString("invalid data")
@@ -47,7 +49,8 @@ func ToggleHandler(store storage.Store) fiber.Handler {
 				SendString("failed to marshal")
 		}
 
-		if err := store.Set(key, data); err != nil {
+		err = store.Set(key, data)
+		if err != nil {
 			return c.Status(
 				fiber.StatusInternalServerError).
 				SendString("failed to update")

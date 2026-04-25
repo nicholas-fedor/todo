@@ -269,25 +269,32 @@ linters:
       - std-error-handling
       - common-false-positives
       - legacy
-    # rules:
-    #   - path: _test\.go
-    #     linters:
-    #       - dupl
-    #       - err113
-    #       - errcheck
-    #       - errorlint
-    #       - exhaustive
-    #       - forcetypeassert
-    #       - funlen
-    #       - gocyclo
-    #       - gosec
-    #       - promlinter
-    #       - usetesting
-    #       - wrapcheck
-    #       - varnamelen
+    rules:
+      #   - path: _test\.go
+      #     linters:
+      #       - dupl
+      #       - err113
+      #       - errcheck
+      #       - errorlint
+      #       - exhaustive
+      #       - forcetypeassert
+      #       - funlen
+      #       - gocyclo
+      #       - gosec
+      #       - promlinter
+      #       - usetesting
+      #       - wrapcheck
+      #       - varnamelen
+      - path: (\.templ$|_templ\.go$)
+        linters:
+          - staticcheck
+        text: "ST1000|SA4006" # package comment + unused ctx (very common in templ)
     paths:
       # - ".*/mocks/.*"
-      - "internal/web/components"
+      - \.templ$ # exclude .templ files completely
+      - _templ\.go$ # exclude generated files
+      - "internal/web/components/*" # exclude the templui components
+      - "internal/web/pages/*" # exclude templ pages overall
       - "internal/utils/templui.go"
     warn-unused: true
 
