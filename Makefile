@@ -10,11 +10,16 @@ GORELEASER=goreleaser
 DOCKER=docker
 
 # Build settings
-GOFLAGS=-trimpath
-LDFLAGS=-s -w
-LDFLAGS_VERSION=-X main.version=$(VERSION)
-LDFLAGS_COMMIT=-X main.commit=$(COMMIT)
-LDFLAGS_DATE=-X main.date=$(DATE)
+VERSION ?= $(shell git describe --tags --always --dirty)
+COMMIT  := $(shell git rev-parse --short HEAD)
+BUILD_TIME := $(shell date -u +%Y-%m-%dT%H:%M:%SZ)
+PKG := github.com/nicholas-fedor/todo
+# trimpath strips ldflags until https://github.com/golang/go/pull/68544 merged
+# GOFLAGS=-trimpath
+LDFLAGS := -s -w\
+			-X '$(PKG).Version=$(VERSION)' \
+            -X '$(PKG).CommitSHA=$(COMMIT)' \
+            -X '$(PKG).BuildTime=$(BUILD_TIME)'
 
 # Default target
 .PHONY: help
@@ -31,7 +36,7 @@ help: ## Show this help message
 .PHONY: build test test-verbose bench lint vet fmt run install tidy
 
 build: ## Build the application binary
-	$(GO) build $(GOFLAGS) -o $(BINARY_DIR)/$(BINARY_NAME) ./...
+	$(GO) build $(GOFLAGS) -ldflags="$(LDFLAGS)" -o $(BINARY_DIR)/$(BINARY_NAME) cmd/server/main.go
 
 test: ## Run all tests
 	$(GO) test -test.fullpath=true -timeout 30s -covermode atomic -v ./...

@@ -1,5 +1,23 @@
 version: "3"
 
+vars:
+  BINARY_NAME: todo
+  BINARY_DIR: bin
+  PKG: github.com/nicholas-fedor/todo
+  VERSION:
+    sh: "git describe --tags --always --dirty"
+  COMMIT:
+    sh: "git rev-parse --short HEAD"
+  BUILD_TIME:
+    sh: "date -u +%Y-%m-%dT%H:%M:%SZ"
+  # trimpath strips ldflags until https://github.com/golang/go/pull/68544 merged
+  # GOFLAGS: -trimpath
+  LDFLAGS: >-
+    -s -w
+    -X '{{.PKG}}.Version={{.VERSION}}'
+    -X '{{.PKG}}.CommitSHA={{.COMMIT}}'
+    -X '{{.PKG}}.BuildTime={{.BUILD_TIME}}'
+
 tasks:
   # Development Server Tasks
 
@@ -55,12 +73,10 @@ tasks:
           > ./internal/web/assets/css/sources.generated.css && \
         bunx @tailwindcss/cli -i ./internal/web/assets/css/input.css -o ./internal/web/assets/css/output.css
 
-  # Go Application Tasks
-
   build:
     desc: Build Go binary
     cmds:
-      - go build -o bin/todo ./...
+      - go build {{.GOFLAGS}} -ldflags="{{.LDFLAGS}}" -o {{.BINARY_DIR}}/{{.BINARY_NAME}} cmd/server/main.go
 
   run:
     desc: Run Go application
