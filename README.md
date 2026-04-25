@@ -147,6 +147,9 @@ Prebuilt binaries are available for the following platforms:
 
 ### From Source
 
+> [!NOTE]
+> Building from source requires Tailwind CSS (managed via [bun](https://bun.com/docs/installation)).
+
 Clone the repository:
 
 ```bash
@@ -157,6 +160,13 @@ Change to the project directory:
 
 ```bash
 cd todo
+```
+
+**Prerequisite:** Install frontend dependencies and build Tailwind CSS assets:
+
+```bash
+bun install
+make tailwind-build   # or: task tailwind-build
 ```
 
 Full installation using Make (installs tools, generates assets, builds, and installs binary):
@@ -178,11 +188,6 @@ Alternatively, use `go install` for direct installation (requires Go toolchain):
 ```bash
 go install github.com/nicholas-fedor/todo/cmd/server@latest
 ```
-
-> [!NOTE]
-> Building from source requires Tailwind CSS for the webpage styling.
-> This project uses [bun](https://bun.com/docs/installation) for package management (already configured in `package.json`).
-> Run `bun install` if building the frontend assets as part of a full development setup.
 
 ## Development
 
