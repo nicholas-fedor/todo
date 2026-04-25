@@ -59,7 +59,7 @@ fmt: ## Format code using goimports
 run: ## Run the application
 	$(GO) run ./cmd/server
 
-install: ## Install the application
+install: install-tools generate build ## Install the application (full pipeline)
 	$(GO) install ./...
 
 tidy: ## Tidy Go modules and verify consistency
@@ -186,10 +186,8 @@ install-tools: ## Install development tools (Go-based)
 	@command -v templ >/dev/null 2>&1 || (echo "Installing templ..." && go install github.com/a-h/templ/cmd/templ@latest)
 	@command -v templui >/dev/null 2>&1 || (echo "Installing templui CLI..." && go install github.com/templui/templui/cmd/templui@latest)
 	@echo ""
-	@echo "NOTE: Install Tailwind CSS separately:"
-	@echo "  Using bun (recommended for this project):"
-	@echo "    bun add -D tailwindcss"
-	@echo "  Or download standalone from: https://github.com/tailwindlabs/tailwindcss/releases"
+	@echo "NOTE: Install Tailwind CSS separately via [bun](https://bun.com/docs/installation):"
+	@echo "  bun add -D tailwindcss"
 	@echo ""
 	@echo "All Go tools installed!"
 
