@@ -11,14 +11,14 @@ on:
         type: boolean
   # Daily scheduled run at midnight UTC
   schedule:
-    - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
+    - cron: "0 0 * * *" # Runs every day at 00:00 UTC
 
 permissions:
   contents: read
 
 jobs:
   # Check if any watched files have changed since last successful nightly run
-  check-changes:
+  check_changes:
     runs-on: ubuntu-latest
     outputs:
       has-changes: ${{ steps.check.outputs.has-changes }}
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
-          fetch-depth: 0  # Fetch full history to compare
+          fetch-depth: 0 # Fetch full history to compare
           persist-credentials: false
 
       - name: Get last successful nightly run commit
@@ -65,16 +65,16 @@ jobs:
 
   # Run Go tests and upload coverage
   test:
-    needs: check-changes
-    if: needs.check-changes.outputs.has-changes == 'true'
+    needs: [check_changes]
+    if: ${{ needs.check_changes.outputs.has-changes == 'true' }}
     uses: ./.github/workflows/test.yaml
     permissions:
       contents: read # For code checkout
 
   # Build binaries, images, SBOMs, and attestations
   build:
-    needs: [test]
-    if: needs.check-changes.outputs.has-changes == 'true'
+    needs: [check_changes, test]
+    if: ${{ needs.check_changes.outputs.has-changes == 'true' }}
     uses: ./.github/workflows/build.yaml
     secrets: inherit
     permissions:
