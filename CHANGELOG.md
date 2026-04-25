@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- Remove template substitution by @nicholas-fedor in [#12](https://github.com/nicholas-fedor/todo/pull/12)
+
+## [0.1.0] - 2026-04-25
+
 ### Added
 
 - Add changelog pr automerge step by @nicholas-fedor in [#4](https://github.com/nicholas-fedor/todo/pull/4)
