@@ -39,6 +39,7 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
 
       - name: Create Pull Request for Changelog
+        id: create_pr
         uses: peter-evans/create-pull-request@d32e88dac789dcc7906e7d26f69f24116fa9c97d
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -50,3 +51,10 @@ jobs:
           commit-message: "docs(changelog): update changelog for ${{ github.ref_name }}"
           body: "Automated changelog update for ${{ github.ref_name }}"
           delete-branch: true
+
+      - name: Enable auto-merge
+        if: "${{ steps.create_pr.outputs.pull-request-number }}"
+        run: gh pr merge --auto --squash "${STEPS_CREATE_PR_OUTPUTS_PULL_REQUEST_NUMBER}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STEPS_CREATE_PR_OUTPUTS_PULL_REQUEST_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
