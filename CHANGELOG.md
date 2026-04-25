@@ -8,18 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
-- Enable verifiable builds by using package directory for main by @nicholas-fedor in [#8](https://github.com/nicholas-fedor/todo/pull/8)
-
-## [0.1.0] - 2026-04-25
-
 ### Added
 
 - Add changelog pr automerge step by @nicholas-fedor in [#4](https://github.com/nicholas-fedor/todo/pull/4)
 
 ### Changed
 
+- Set build id to static value by @nicholas-fedor in [#10](https://github.com/nicholas-fedor/todo/pull/10)
+- Enable verifiable builds by using package directory for main by @nicholas-fedor in [#8](https://github.com/nicholas-fedor/todo/pull/8)
 - Reorganize project structure and add CI/CD infrastructure by @nicholas-fedor in [#1](https://github.com/nicholas-fedor/todo/pull/1)
 - Initialize project structure by @nicholas-fedor
 - Initial commit by @nicholas-fedor
@@ -34,8 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New Contributors
 
-- @github-actions[bot] made their first contribution in [#7](https://github.com/nicholas-fedor/todo/pull/7)
-- @nicholas-fedor made their first contribution in [#6](https://github.com/nicholas-fedor/todo/pull/6)
+- @nicholas-fedor made their first contribution in [#10](https://github.com/nicholas-fedor/todo/pull/10)
+- @github-actions[bot] made their first contribution in [#9](https://github.com/nicholas-fedor/todo/pull/9)
 
 ## Compare Releases
 
