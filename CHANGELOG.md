@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Removed
+### Changed
 
-- Remove conflicting gomod.mod flag by @nicholas-fedor in [#6](https://github.com/nicholas-fedor/todo/pull/6)
+- Enable verifiable builds by using package directory for main by @nicholas-fedor in [#8](https://github.com/nicholas-fedor/todo/pull/8)
 
 ## [0.1.0] - 2026-04-25
 
@@ -28,10 +28,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix git-cliff null reference error by @nicholas-fedor in [#2](https://github.com/nicholas-fedor/todo/pull/2)
 
+### Removed
+
+- Remove conflicting gomod.mod flag by @nicholas-fedor in [#6](https://github.com/nicholas-fedor/todo/pull/6)
+
 ### New Contributors
 
-- @github-actions[bot] made their first contribution in [#5](https://github.com/nicholas-fedor/todo/pull/5)
-- @nicholas-fedor made their first contribution in [#4](https://github.com/nicholas-fedor/todo/pull/4)
+- @github-actions[bot] made their first contribution in [#7](https://github.com/nicholas-fedor/todo/pull/7)
+- @nicholas-fedor made their first contribution in [#6](https://github.com/nicholas-fedor/todo/pull/6)
 
 ## Compare Releases
 
