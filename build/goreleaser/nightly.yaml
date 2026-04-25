@@ -25,7 +25,7 @@ version: 2
 # Project Name
 # https://goreleaser.com/customization/project/
 # ################################################################################
-project_name: "{{ .ProjectName }}"
+project_name: "todo"
 
 ################################################################################
 # Verifiable Builds (Supply Chain Security)
@@ -44,7 +44,7 @@ gomod:
 builds:
   - id: "todo-binary"
     main: ./cmd/server
-    binary: "{{ .ProjectName }}"
+    binary: "todo"
     flags:
       - -trimpath
     ldflags:
@@ -105,7 +105,7 @@ archives:
 ################################################################################
 source:
   enabled: true
-  name_template: "{{ .ProjectName }}.src"
+  name_template: "todo.src"
 
 ################################################################################
 # Checksums Configuration
@@ -129,11 +129,11 @@ dockers_v2:
   ##############################################################################
   # Multi-platform manifest (all platforms) - non-prefixed dev tag only
   ##############################################################################
-  - id: "{{ .ProjectName }}-manifest-dev"
+  - id: "todo-manifest-dev"
     ids: ["todo-binary"]
     images:
-      - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      - "nickfedor/todo"
+      - "ghcr.io/nicholas-fedor/todo"
     tags:
       - "latest-dev"
     dockerfile: build/docker/Dockerfile
@@ -144,123 +144,123 @@ dockers_v2:
       - linux/arm64
       - linux/riscv64
     labels:
-      org.opencontainers.image.name: "{{ .ProjectName }}"
+      org.opencontainers.image.name: "todo"
       org.opencontainers.image.created: "{{ .Date }}"
       org.opencontainers.image.version: "{{ .Version }}"
       org.opencontainers.image.revision: "{{ .FullCommit }}"
       org.opencontainers.image.source: "{{ .GitURL }}"
       org.opencontainers.image.description: "A basic test todo app."
       org.opencontainers.image.licenses: "AGPLv3"
-      org.opencontainers.image.url: "https://hub.docker.com/r/{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
+      org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
   ##############################################################################
   # Platform-specific images - platform-prefixed dev tags only
   ##############################################################################
-  - id: "{{ .ProjectName }}-amd64-dev"
+  - id: "todo-amd64-dev"
     ids: ["todo-binary"]
     images:
-      - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      - "nickfedor/todo"
+      - "ghcr.io/nicholas-fedor/todo"
     tags:
       - "amd64-dev"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/amd64
     labels:
-      org.opencontainers.image.name: "{{ .ProjectName }}"
+      org.opencontainers.image.name: "todo"
       org.opencontainers.image.created: "{{ .Date }}"
       org.opencontainers.image.version: "{{ .Version }}"
       org.opencontainers.image.revision: "{{ .FullCommit }}"
       org.opencontainers.image.source: "{{ .GitURL }}"
       org.opencontainers.image.description: "A basic test todo app."
       org.opencontainers.image.licenses: "AGPLv3"
-      org.opencontainers.image.url: "https://hub.docker.com/r/{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
+      org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "{{ .ProjectName }}-i386-dev"
+  - id: "todo-i386-dev"
     ids: ["todo-binary"]
     images:
-      - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      - "nickfedor/todo"
+      - "ghcr.io/nicholas-fedor/todo"
     tags:
       - "i386-dev"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/386
     labels:
-      org.opencontainers.image.name: "{{ .ProjectName }}"
+      org.opencontainers.image.name: "todo"
       org.opencontainers.image.created: "{{ .Date }}"
       org.opencontainers.image.version: "{{ .Version }}"
       org.opencontainers.image.revision: "{{ .FullCommit }}"
       org.opencontainers.image.source: "{{ .GitURL }}"
       org.opencontainers.image.description: "A basic test todo app."
       org.opencontainers.image.licenses: "AGPLv3"
-      org.opencontainers.image.url: "https://hub.docker.com/r/{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
+      org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "{{ .ProjectName }}-armhf-dev"
+  - id: "todo-armhf-dev"
     ids: ["todo-binary"]
     images:
-      - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      - "nickfedor/todo"
+      - "ghcr.io/nicholas-fedor/todo"
     tags:
       - "armhf-dev"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/arm/v6
     labels:
-      org.opencontainers.image.name: "{{ .ProjectName }}"
+      org.opencontainers.image.name: "todo"
       org.opencontainers.image.created: "{{ .Date }}"
       org.opencontainers.image.version: "{{ .Version }}"
       org.opencontainers.image.revision: "{{ .FullCommit }}"
       org.opencontainers.image.source: "{{ .GitURL }}"
       org.opencontainers.image.description: "A basic test todo app."
       org.opencontainers.image.licenses: "AGPLv3"
-      org.opencontainers.image.url: "https://hub.docker.com/r/{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
+      org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "{{ .ProjectName }}-arm64v8-dev"
+  - id: "todo-arm64v8-dev"
     ids: ["todo-binary"]
     images:
-      - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      - "nickfedor/todo"
+      - "ghcr.io/nicholas-fedor/todo"
     tags:
       - "arm64v8-dev"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/arm64
     labels:
-      org.opencontainers.image.name: "{{ .ProjectName }}"
+      org.opencontainers.image.name: "todo"
       org.opencontainers.image.created: "{{ .Date }}"
       org.opencontainers.image.version: "{{ .Version }}"
       org.opencontainers.image.revision: "{{ .FullCommit }}"
       org.opencontainers.image.source: "{{ .GitURL }}"
       org.opencontainers.image.description: "A basic test todo app."
       org.opencontainers.image.licenses: "AGPLv3"
-      org.opencontainers.image.url: "https://hub.docker.com/r/{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
+      org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "{{ .ProjectName }}-riscv64-dev"
+  - id: "todo-riscv64-dev"
     ids: ["todo-binary"]
     images:
-      - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      - "nickfedor/todo"
+      - "ghcr.io/nicholas-fedor/todo"
     tags:
       - "riscv64-dev"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/riscv64
     labels:
-      org.opencontainers.image.name: "{{ .ProjectName }}"
+      org.opencontainers.image.name: "todo"
       org.opencontainers.image.created: "{{ .Date }}"
       org.opencontainers.image.version: "{{ .Version }}"
       org.opencontainers.image.revision: "{{ .FullCommit }}"
       org.opencontainers.image.source: "{{ .GitURL }}"
       org.opencontainers.image.description: "A basic test todo app."
       org.opencontainers.image.licenses: "AGPLv3"
-      org.opencontainers.image.url: "https://hub.docker.com/r/{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
-      org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
+      org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
+      org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
 ################################################################################
 # Software Bill of Materials (SBOM) Configuration
