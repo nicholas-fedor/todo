@@ -10,7 +10,37 @@ bun install
 task dev  # http://localhost:3000
 ```
 
-See the sections below for detailed tool installation and configuration.
+## Commit Guidelines
+
+This project enforces [Conventional Commits](https://www.conventionalcommits.org/) via [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional).
+
+### Format
+
+```text
+type(scope?): description
+
+[optional body]
+```
+
+### Rules
+
+- **type** (required): must be one of `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`, `build`, `revert`
+- **scope** (optional): noun describing affected area (e.g. `handlers`, `storage`, `ci`)
+- **description** (required): lowercase imperative, no trailing period, max 100 characters
+- **body** (optional): blank line after header, wrapped at 100 characters per line
+
+### Examples
+
+```text
+feat(handlers): add toggle endpoint for todos
+fix(storage): handle panics on missing data directory
+ci: correct GitHub Actions workflow syntax
+refactor: reorganize project structure
+```
+
+Breaking changes should include `!` before the colon or a `BREAKING CHANGE:` footer.
+
+---
 
 ---
 
