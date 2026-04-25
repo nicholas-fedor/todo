@@ -59,8 +59,8 @@ fmt: ## Format code using goimports
 run: ## Run the application
 	$(GO) run ./cmd/server
 
-install: install-tools generate build ## Install the application (full pipeline)
-	$(GO) install ./...
+install: install-tools generate ## Install the application (full pipeline)
+	$(GO) install $(GOFLAGS) -ldflags="$(LDFLAGS)" ./...
 
 tidy: ## Tidy Go modules and verify consistency
 	$(GO) mod tidy
