@@ -41,9 +41,9 @@ gomod:
 # Go Binary Build Configuration
 # https://goreleaser.com/customization/builds/go/
 ################################################################################
-  builds:
-    - id: "{{ .ProjectName }}-binary"
-      main: ./cmd/server
+builds:
+  - id: "todo-binary"
+    main: ./cmd/server
     binary: "{{ .ProjectName }}"
     flags:
       - -trimpath
@@ -130,7 +130,7 @@ dockers_v2:
   # Multi-platform manifest (all platforms) - non-prefixed dev tag only
   ##############################################################################
   - id: "{{ .ProjectName }}-manifest-dev"
-    ids: ["{{ .ProjectName }}-binary"]
+    ids: ["todo-binary"]
     images:
       - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
       - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
@@ -158,7 +158,7 @@ dockers_v2:
   # Platform-specific images - platform-prefixed dev tags only
   ##############################################################################
   - id: "{{ .ProjectName }}-amd64-dev"
-    ids: ["{{ .ProjectName }}-binary"]
+    ids: ["todo-binary"]
     images:
       - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
       - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
@@ -179,7 +179,7 @@ dockers_v2:
       org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
 
   - id: "{{ .ProjectName }}-i386-dev"
-    ids: ["{{ .ProjectName }}-binary"]
+    ids: ["todo-binary"]
     images:
       - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
       - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
@@ -200,7 +200,7 @@ dockers_v2:
       org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
 
   - id: "{{ .ProjectName }}-armhf-dev"
-    ids: ["{{ .ProjectName }}-binary"]
+    ids: ["todo-binary"]
     images:
       - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
       - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
@@ -221,7 +221,7 @@ dockers_v2:
       org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
 
   - id: "{{ .ProjectName }}-arm64v8-dev"
-    ids: ["{{ .ProjectName }}-binary"]
+    ids: ["todo-binary"]
     images:
       - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
       - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
@@ -242,7 +242,7 @@ dockers_v2:
       org.opencontainers.image.documentation: "https://github.com/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
 
   - id: "{{ .ProjectName }}-riscv64-dev"
-    ids: ["{{ .ProjectName }}-binary"]
+    ids: ["todo-binary"]
     images:
       - "{{ .Env.DOCKER_NAMESPACE }}/{{ .ProjectName }}"
       - "ghcr.io/{{ .Env.GHCR_NAMESPACE }}/{{ .ProjectName }}"
