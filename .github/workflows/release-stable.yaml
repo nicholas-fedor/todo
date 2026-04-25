@@ -1,0 +1,43 @@
+name: Release Stable
+
+on:
+  # Manual runs with option of dry-run (for testing CI pipeline)
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Run in test mode without publishing artifacts"
+        required: false
+        default: false
+        type: boolean
+  # Tag pushes (e.g., v1.2.3)
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+" # Semantic version tags
+
+permissions:
+  contents: read
+
+jobs:
+  # Run Go tests and upload coverage
+  test:
+    uses: ./.github/workflows/test.yaml
+    permissions:
+      contents: read # For code checkout
+
+  # Build binaries, images, SBOMs, and attestations
+  build:
+    needs: [test] # Requires tests to pass
+    uses: ./.github/workflows/build.yaml
+    secrets: inherit
+    permissions:
+      contents: write # For code checkout and publishing releases
+      packages: write # For pushing images to registries
+      attestations: write # For generating provenance and SBOMs
+      id-token: write # For OIDC auth to Docker Hub and GHCR
+    with:
+      build-type: stable # Stable release.
+      dry-run: ${{ fromJson(inputs.dry-run || 'false') }} # String to boolean, defaults false
+      project_name: todo
+      docker_namespace: nickfedor
+      ghcr_namespace: nicholas-fedor
+      environment: CI

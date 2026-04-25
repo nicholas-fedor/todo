@@ -1,10 +1,55 @@
 version: "3"
 
+vars:
+  BINARY_NAME: todo
+  BINARY_DIR: bin
+  PKG: github.com/nicholas-fedor/todo
+  VERSION:
+    sh: "git describe --tags --always --dirty"
+  COMMIT:
+    sh: "git rev-parse --short HEAD"
+  BUILD_TIME:
+    sh: "date -u +%Y-%m-%dT%H:%M:%SZ"
+  # trimpath strips ldflags until https://github.com/golang/go/pull/68544 merged
+  # GOFLAGS: -trimpath
+  LDFLAGS: >-
+    -s -w
+    -X '{{.PKG}}.Version={{.VERSION}}'
+    -X '{{.PKG}}.CommitSHA={{.COMMIT}}'
+    -X '{{.PKG}}.BuildTime={{.BUILD_TIME}}'
+
 tasks:
+  # Development Server Tasks
+
+  dev:
+    desc: Start development server with hot reload
+    cmds:
+      - task --parallel templ tailwind
+
+  # Templ (HTML templating) Tasks
+
   templ:
     desc: Run templ with integrated server and hot reload using Air
     cmds:
       - air
+
+  templ-generate:
+    desc: Generate templ Go files without hot reload
+    cmds:
+      - templ generate
+
+  templ-sources:
+    desc: Regenerate Tailwind sources.generated.css file
+    cmds:
+      - |
+        TEMPLUI_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/templui/templui)" && \
+        printf '%s\n' \
+          '@source "./**/*.templ";' \
+          "@source \"$TEMPLUI_PATH/components/**/*.templ\";" \
+          > ./internal/web/assets/css/sources.generated.css && \
+        echo "sources.generated.css updated"
+
+  # Tailwind CSS Tasks
 
   tailwind:
     desc: Watch Tailwind CSS changes
@@ -14,10 +59,108 @@ tasks:
         printf '%s\n' \
           '@source "./**/*.templ";' \
           "@source \"$TEMPLUI_PATH/components/**/*.templ\";" \
-          > ./assets/css/sources.generated.css && \
-        bunx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output.css --watch
+          > ./internal/web/assets/css/sources.generated.css && \
+        bunx @tailwindcss/cli -i ./internal/web/assets/css/input.css -o ./internal/web/assets/css/output.css --watch
 
-  dev:
-    desc: Start development server with hot reload
+  tailwind-build:
+    desc: Build Tailwind CSS once
     cmds:
-      - task --parallel tailwind templ
+      - |
+        TEMPLUI_PATH="$(go list -mod=mod -m -f {{`'{{.Dir}}'`}} github.com/templui/templui)" && \
+        printf '%s\n' \
+          '@source "./**/*.templ";' \
+          "@source \"$TEMPLUI_PATH/components/**/*.templ\";" \
+          > ./internal/web/assets/css/sources.generated.css && \
+        bunx @tailwindcss/cli -i ./internal/web/assets/css/input.css -o ./internal/web/assets/css/output.css
+
+  build:
+    desc: Build Go binary
+    cmds:
+      - go build {{.GOFLAGS}} -ldflags="{{.LDFLAGS}}" -o {{.BINARY_DIR}}/{{.BINARY_NAME}} cmd/server/main.go
+
+  run:
+    desc: Run Go application
+    cmds:
+      - go run ./cmd/server
+
+  test:
+    desc: Run Go tests
+    cmds:
+      - go test -test.fullpath=true -timeout 30s -covermode atomic -v ./...
+
+  test-coverage:
+    desc: Run Go tests with coverage
+    cmds:
+      - go test  -test.fullpath=true -timeout 30s -covermode=atomic -v  -coverprofile=coverage.out ./...
+
+  bench:
+    desc: Run benchmarks
+    cmds:
+      - go test -bench=. -benchmem ./...
+
+  lint:
+    desc: Run linter
+    cmds:
+      - golangci-lint run --fix --config build/golangci-lint/golangci-lint.yaml ./...
+
+  fmt:
+    desc: Run fmt
+    cmds:
+      - golangci-lint fmt --config build/golangci-lint/golangci-lint.yaml ./...
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go vet ./...
+
+  tidy:
+    desc: Tidy Go modules
+    cmds:
+      - go mod tidy
+      - go mod verify
+
+  # Utility Tasks
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - rm -rf bin/
+      - rm -f coverage.out
+
+  install-tools:
+    desc: Install required Go-based development tools
+    cmds:
+      - go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+      - go install github.com/goreleaser/goreleaser/v2@latest
+      - go install github.com/air-verse/air@latest
+      - go install github.com/a-h/templ/cmd/templ@latest
+      - go install github.com/templui/templui/cmd/templui@latest
+    preconditions:
+      - sh: "command -v go"
+        msg: "Go must be installed"
+
+  check-tools:
+    desc: Check which development tools are installed
+    cmds:
+      - |
+        echo "Checking required tools:"
+        echo ""
+        echo "  tailwindcss (via bunx): $(bunx @tailwindcss/cli --version >/dev/null 2>&1 && echo 'available - bunx works' || echo 'NOT accessible via bunx (bun install needed)')"
+        echo "  templ: $(command -v templ >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/a-h/templ/cmd/templ@latest')"
+        echo "  templui CLI: $(command -v templui >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/templui/templui/cmd/templui@latest')"
+        echo "  task: $(command -v task >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/go-task/task/v3/cmd/task@latest')"
+        echo "  air: $(command -v air >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/air-verse/air@latest')"
+        echo "  golangci-lint: $(command -v golangci-lint >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest')"
+        echo "  goreleaser: $(command -v goreleaser >/dev/null 2>&1 && echo '✓ installed' || echo '✗ NOT FOUND — run: go install github.com/goreleaser/goreleaser/v2@latest')"
+        echo ""
+        echo "Note: Tailwind CSS is invoked via 'bunx @tailwindcss/cli' which uses the devDependency in package.json"
+
+  setup:
+    desc: Initial project setup (install dependencies and tools)
+    cmds:
+      - go mod download
+      - task install-tools
+      - echo "Setup complete"
+      - echo ""
+      - echo "Tailwind CSS is managed via bun (already in package.json)"
+      - echo "  bun install # install dependencies"
