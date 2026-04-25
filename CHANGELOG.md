@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Removed
+### Changed
 
-- Remove template substitution by @nicholas-fedor in [#12](https://github.com/nicholas-fedor/todo/pull/12)
+- Update Dockerfile to support GoReleaser dockers_v2 by @nicholas-fedor in [#14](https://github.com/nicholas-fedor/todo/pull/14)
 
 ## [0.1.0] - 2026-04-25
 
@@ -32,12 +32,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- Remove template substitution by @nicholas-fedor in [#12](https://github.com/nicholas-fedor/todo/pull/12)
 - Remove conflicting gomod.mod flag by @nicholas-fedor in [#6](https://github.com/nicholas-fedor/todo/pull/6)
 
 ### New Contributors
 
-- @nicholas-fedor made their first contribution in [#10](https://github.com/nicholas-fedor/todo/pull/10)
-- @github-actions[bot] made their first contribution in [#9](https://github.com/nicholas-fedor/todo/pull/9)
+- @nicholas-fedor made their first contribution in [#12](https://github.com/nicholas-fedor/todo/pull/12)
+- @github-actions[bot] made their first contribution in [#11](https://github.com/nicholas-fedor/todo/pull/11)
 
 ## Compare Releases
 
