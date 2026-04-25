@@ -28,6 +28,7 @@ jobs:
   build:
     needs: [test] # Requires tests to pass
     uses: ./.github/workflows/build.yaml
+    secrets: inherit
     permissions:
       contents: write # For code checkout and publishing releases
       packages: write # For pushing images to registries
