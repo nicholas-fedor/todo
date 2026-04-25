@@ -41,9 +41,9 @@ gomod:
 # Go Binary Build Configuration
 # https://goreleaser.com/customization/builds/go/
 ################################################################################
-builds:
-  - id: "{{ .ProjectName }}-binary"
-    main: ./cmd/server/main.go
+  builds:
+    - id: "{{ .ProjectName }}-binary"
+      main: ./cmd/server
     binary: "{{ .ProjectName }}"
     flags:
       - -trimpath

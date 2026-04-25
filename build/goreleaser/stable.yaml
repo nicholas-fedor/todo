@@ -38,7 +38,7 @@ gomod:
 ################################################################################
 builds:
   - id: "{{ .ProjectName }}-binary"
-    main: ./cmd/server/main.go
+    main: ./cmd/server/
     binary: "{{ .ProjectName }}"
     flags:
       - -trimpath
