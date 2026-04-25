@@ -131,20 +131,35 @@ func main() {
 
 	// ----- Server Operations -----
 
+	// Channel to receive server startup errors
+	serverErr := make(chan error, 1)
+
 	// Start the server in a goroutine (required for hooks to fire)
 	go func() {
 		err := app.Listen(":3000")
-		if err != nil {
-			log.Error(err)
-		}
+		serverErr <- err
 	}()
 
 	// Wait for termination signal (Ctrl+C, Docker/K8s stop, etc.)
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
-	<-quit
 
-	log.Info("Received shutdown signal — gracefully shutting down...")
+	// Wait for either startup error or termination signal
+	select {
+	case err := <-serverErr:
+		if err != nil {
+			// Ensure database is closed and log error, if needed.
+			// Allow follow-on log.Fatalf to log server failure.
+			closeErr := store.Close()
+			if closeErr != nil {
+				log.Error(closeErr)
+			}
+			//nolint:gocritic // store.Close() explicitly called
+			log.Fatalf("Server failed to start: %v", err)
+		}
+	case <-quit:
+		log.Info("Received shutdown signal — gracefully shutting down...")
+	}
 
 	// Graceful shutdown with 10 second timeout
 	err = app.ShutdownWithTimeout(shutdownTimeout)
