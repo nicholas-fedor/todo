@@ -25,6 +25,9 @@ COPY --chmod=0755 ${TARGETPLATFORM}/todo /todo
 # Run as non-root using the standard distroless UID/GID (best practice)
 USER 65532
 
+# Declare the data directory as a volume so it can be persisted
+VOLUME ["/data"]
+
 # Expose the application port
 EXPOSE 3000
 
