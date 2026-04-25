@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update documentation and build info by @nicholas-fedor in [#22](https://github.com/nicholas-fedor/todo/pull/22)
 - Fix broken comment by @nicholas-fedor in [#16](https://github.com/nicholas-fedor/todo/pull/16)
 
 ## [0.1.0] - 2026-04-25
