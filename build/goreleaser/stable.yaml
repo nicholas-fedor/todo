@@ -314,7 +314,7 @@ docker_signs:
     cmd: cosign
     args:
       - "sign"
-      - "${artifact}"
+      - "${artifact}@${digest}"
       - "--yes"
     artifacts: all
     output: true
