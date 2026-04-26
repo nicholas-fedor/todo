@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Change nonroot user and document by @nicholas-fedor in [#28](https://github.com/nicholas-fedor/todo/pull/28)
 - Correct goreleaser nightly configuration by @nicholas-fedor in [#26](https://github.com/nicholas-fedor/todo/pull/26)
 
 ### Chores
