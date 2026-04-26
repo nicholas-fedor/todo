@@ -10,11 +10,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Disable cache by @nicholas-fedor in [#57](https://github.com/nicholas-fedor/todo/pull/57)
 - Change nonroot user and document by @nicholas-fedor in [#28](https://github.com/nicholas-fedor/todo/pull/28)
 - Correct goreleaser nightly configuration by @nicholas-fedor in [#26](https://github.com/nicholas-fedor/todo/pull/26)
 
 ### Chores
 
+- Update actions/setup-go digest to 40f1582 by @renovate[bot] in [#34](https://github.com/nicholas-fedor/todo/pull/34)
+- Update module github.com/templui/templui to v1.10.0 by @renovate[bot] in [#43](https://github.com/nicholas-fedor/todo/pull/43)
+- Update module github.com/gofiber/fiber/v3 to v3.2.0 by @renovate[bot] in [#42](https://github.com/nicholas-fedor/todo/pull/42)
+- Update module github.com/gofiber/utils/v2 to v2.0.4 by @renovate[bot] in [#39](https://github.com/nicholas-fedor/todo/pull/39)
 - Update dependency typescript to v6 by @renovate[bot] in [#52](https://github.com/nicholas-fedor/todo/pull/52)
 - Lock file maintenance by @renovate[bot] in [#55](https://github.com/nicholas-fedor/todo/pull/55)
 - Update module golang.org/x/text to v0.36.0 by @renovate[bot] in [#48](https://github.com/nicholas-fedor/todo/pull/48)
@@ -31,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New Contributors
 
-- @renovate[bot] made their first contribution in [#52](https://github.com/nicholas-fedor/todo/pull/52)
+- @renovate[bot] made their first contribution in [#34](https://github.com/nicholas-fedor/todo/pull/34)
 
 ## [0.1.1] - 2026-04-25
 
