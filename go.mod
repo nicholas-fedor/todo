@@ -8,7 +8,7 @@ require (
 	github.com/dgraph-io/badger/v4 v4.9.1
 	github.com/gofiber/fiber/v3 v3.2.0
 	github.com/google/uuid v1.6.0
-	github.com/templui/templui v1.9.4
+	github.com/templui/templui v1.10.0
 )
 
 require (
