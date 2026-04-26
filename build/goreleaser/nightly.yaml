@@ -80,6 +80,8 @@ builds:
         goarch: "386"
       - goos: darwin
         goarch: arm
+      - goos: darwin
+        goarch: riscv64
     mod_timestamp: "{{ .CommitTimestamp }}"
 
 ################################################################################
@@ -305,7 +307,6 @@ docker_signs:
       - "sign"
       - "${artifact}@${digest}"
       - "--yes"
-    artifacts: all
     output: true
 
 ################################################################################
