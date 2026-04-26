@@ -8,8 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add sbom attestation subject-checksums path by @nicholas-fedor in [#68](https://github.com/nicholas-fedor/todo/pull/68)
+
+### Changed
+
+- Tighten up release and changelog configurations by @nicholas-fedor in [#65](https://github.com/nicholas-fedor/todo/pull/65)
+
 ### Chores
 
+- Add github-actions[bot] for CHANGELOG.md by @nicholas-fedor in [#69](https://github.com/nicholas-fedor/todo/pull/69)
+- Add codeowners file by @nicholas-fedor in [#67](https://github.com/nicholas-fedor/todo/pull/67)
 - Update orhun/git-cliff-action digest to f50e115 by @renovate[bot] in [#63](https://github.com/nicholas-fedor/todo/pull/63)
 
 ## [0.1.2] - 2026-04-26
