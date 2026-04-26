@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Correct goreleaser nightly configuration by @nicholas-fedor in [#26](https://github.com/nicholas-fedor/todo/pull/26)
+
 ### Chores
 
 - Add gitattributes by @nicholas-fedor in [#24](https://github.com/nicholas-fedor/todo/pull/24)
