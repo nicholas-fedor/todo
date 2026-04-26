@@ -27,6 +27,13 @@ version: 2
 # ################################################################################
 project_name: "todo"
 
+# ################################################################################
+# Release Configuration
+# https://goreleaser.com/customization/publish/scm/
+# ################################################################################
+release:
+  disable: true
+
 ################################################################################
 # Verifiable Builds (Supply Chain Security)
 # https://goreleaser.com/customization/builds/verifiable_builds/
@@ -43,7 +50,7 @@ gomod:
 ################################################################################
 builds:
   - id: "todo-binary"
-    main: ./cmd/server
+    main: ./cmd/server/
     binary: "todo"
     flags:
       - -trimpath
