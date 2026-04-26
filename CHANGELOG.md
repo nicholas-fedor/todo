@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add codeowners file by @nicholas-fedor in [#67](https://github.com/nicholas-fedor/todo/pull/67)
 - Update orhun/git-cliff-action digest to f50e115 by @renovate[bot] in [#63](https://github.com/nicholas-fedor/todo/pull/63)
 
+### Fixed
+
+- Fix source sbom attestation path by @nicholas-fedor in [#70](https://github.com/nicholas-fedor/todo/pull/70)
+
 ## [0.1.2] - 2026-04-26
 
 ### Changed
