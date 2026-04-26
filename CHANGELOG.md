@@ -15,7 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update actions/checkout digest to 34e1148 by @renovate[bot] in [#31](https://github.com/nicholas-fedor/todo/pull/31)
+- Pin dependencies by @renovate[bot] in [#30](https://github.com/nicholas-fedor/todo/pull/30)
 - Add gitattributes by @nicholas-fedor in [#24](https://github.com/nicholas-fedor/todo/pull/24)
+
+### New Contributors
+
+- @renovate[bot] made their first contribution in [#31](https://github.com/nicholas-fedor/todo/pull/31)
 
 ## [0.1.1] - 2026-04-25
 
