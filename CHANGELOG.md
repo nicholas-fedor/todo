@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Lock file maintenance by @renovate[bot] in [#61](https://github.com/nicholas-fedor/todo/pull/61)
 - Update actions/setup-go action to v6 by @renovate[bot] in [#50](https://github.com/nicholas-fedor/todo/pull/50)
 - Update actions/checkout action to v6 by @renovate[bot] in [#49](https://github.com/nicholas-fedor/todo/pull/49)
 - Update commitlint monorepo to v20 by @renovate[bot] in [#51](https://github.com/nicholas-fedor/todo/pull/51)
@@ -42,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New Contributors
 
-- @renovate[bot] made their first contribution in [#50](https://github.com/nicholas-fedor/todo/pull/50)
+- @renovate[bot] made their first contribution in [#61](https://github.com/nicholas-fedor/todo/pull/61)
 
 ## [0.1.1] - 2026-04-25
 
