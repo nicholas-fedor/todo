@@ -15,13 +15,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update dependency typescript to v6 by @renovate[bot] in [#52](https://github.com/nicholas-fedor/todo/pull/52)
+- Lock file maintenance by @renovate[bot] in [#55](https://github.com/nicholas-fedor/todo/pull/55)
+- Update module golang.org/x/text to v0.36.0 by @renovate[bot] in [#48](https://github.com/nicholas-fedor/todo/pull/48)
+- Update module github.com/valyala/fasthttp to v1.70.0 by @renovate[bot] in [#44](https://github.com/nicholas-fedor/todo/pull/44)
+- Update module github.com/mattn/go-isatty to v0.0.21 by @renovate[bot] in [#40](https://github.com/nicholas-fedor/todo/pull/40)
+- Update module github.com/tinylib/msgp to v1.6.4 by @renovate[bot] in [#41](https://github.com/nicholas-fedor/todo/pull/41)
+- Update module github.com/gofiber/schema to v1.7.1 by @renovate[bot] in [#38](https://github.com/nicholas-fedor/todo/pull/38)
+- Update docker/login-action digest to c94ce9f by @renovate[bot] in [#35](https://github.com/nicholas-fedor/todo/pull/35)
+- Update sigstore/cosign-installer digest to 398d4b0 by @renovate[bot] in [#37](https://github.com/nicholas-fedor/todo/pull/37)
+- Update securego/gosec digest to 223e19b by @renovate[bot] in [#36](https://github.com/nicholas-fedor/todo/pull/36)
 - Update actions/checkout digest to 34e1148 by @renovate[bot] in [#31](https://github.com/nicholas-fedor/todo/pull/31)
 - Pin dependencies by @renovate[bot] in [#30](https://github.com/nicholas-fedor/todo/pull/30)
 - Add gitattributes by @nicholas-fedor in [#24](https://github.com/nicholas-fedor/todo/pull/24)
 
 ### New Contributors
 
-- @renovate[bot] made their first contribution in [#31](https://github.com/nicholas-fedor/todo/pull/31)
+- @renovate[bot] made their first contribution in [#52](https://github.com/nicholas-fedor/todo/pull/52)
 
 ## [0.1.1] - 2026-04-25
 
