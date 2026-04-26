@@ -22,14 +22,14 @@ COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 # Copy the Go binary (placed by GoReleaser under $TARGETPLATFORM/)
 COPY --chmod=0755 ${TARGETPLATFORM}/todo /todo
 
-# Run as non-root using the standard distroless UID/GID (best practice)
-USER 65532
-
 # Declare the data directory as a volume so it can be persisted
 VOLUME ["/data"]
 
 # Expose the application port
 EXPOSE 3000
+
+# Run as a non-root user
+USER 1000:1000
 
 # Set the entrypoint
 ENTRYPOINT ["/todo"]

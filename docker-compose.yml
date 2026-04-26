@@ -1,13 +1,27 @@
 services:
+  #  one-time sidecar to set volume permissions to 1000:100
+  volume-manager:
+    command: chown -R 1000:1000 /data
+    container_name: volume-manager
+    image: alpine
+    user: root:root # runs as root to match Docker daemon for volume management
+    volumes:
+      - todo.data:/data
+
   todo:
     container_name: todo
-    image: nickfedor/todo:latest
+    depends_on:
+      volume-manager:
+        condition: service_completed_successfully
+    image: nickfedor/todo:latest-amd64
     # image: ghcr.io/nicholas-fedor/todo:latest
+    volumes:
+      - todo.data:/data
     ports:
       - "3000:3000"
-    volumes:
-      - todo-data:/data
     restart: unless-stopped
+    security_opt:
+      - "no-new-privileges=true"
 
 volumes:
-  todo-data:
+  todo.data:
