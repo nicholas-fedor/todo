@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update actions/setup-go action to v6 by @renovate[bot] in [#50](https://github.com/nicholas-fedor/todo/pull/50)
+- Update actions/checkout action to v6 by @renovate[bot] in [#49](https://github.com/nicholas-fedor/todo/pull/49)
+- Update commitlint monorepo to v20 by @renovate[bot] in [#51](https://github.com/nicholas-fedor/todo/pull/51)
+- Update docker/login-action action to v4 by @renovate[bot] in [#53](https://github.com/nicholas-fedor/todo/pull/53)
+- Update sigstore/cosign-installer action to v4 by @renovate[bot] in [#54](https://github.com/nicholas-fedor/todo/pull/54)
+- Update module golang.org/x/net to v0.53.0 by @renovate[bot] in [#46](https://github.com/nicholas-fedor/todo/pull/46)
 - Update actions/setup-go digest to 40f1582 by @renovate[bot] in [#34](https://github.com/nicholas-fedor/todo/pull/34)
 - Update module github.com/templui/templui to v1.10.0 by @renovate[bot] in [#43](https://github.com/nicholas-fedor/todo/pull/43)
 - Update module github.com/gofiber/fiber/v3 to v3.2.0 by @renovate[bot] in [#42](https://github.com/nicholas-fedor/todo/pull/42)
@@ -36,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### New Contributors
 
-- @renovate[bot] made their first contribution in [#34](https://github.com/nicholas-fedor/todo/pull/34)
+- @renovate[bot] made their first contribution in [#50](https://github.com/nicholas-fedor/todo/pull/50)
 
 ## [0.1.1] - 2026-04-25
 
