@@ -159,9 +159,9 @@ dockers_v2:
       org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
       org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  ##################################################################################################
+  ##############################################################################
   # Platform-specific images - platform-prefixed tags only
-  ##################################################################################################
+  ##############################################################################
   - id: "todo-amd64"
     ids: ["todo-binary"]
     images:
