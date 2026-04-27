@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/mattn/go-isatty to v0.0.22 by @renovate[bot] in [#74](https://github.com/nicholas-fedor/todo/pull/74)
+- Update goreleaser/goreleaser-action digest to 1a80836 by @renovate[bot] in [#72](https://github.com/nicholas-fedor/todo/pull/72)
 - Add github-actions[bot] for CHANGELOG.md by @nicholas-fedor in [#69](https://github.com/nicholas-fedor/todo/pull/69)
 - Add codeowners file by @nicholas-fedor in [#67](https://github.com/nicholas-fedor/todo/pull/67)
 - Update orhun/git-cliff-action digest to f50e115 by @renovate[bot] in [#63](https://github.com/nicholas-fedor/todo/pull/63)
