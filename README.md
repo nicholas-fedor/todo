@@ -29,7 +29,7 @@ docker run --rm -v todo.data:/data alpine chown -R 1000:1000 /data
 Pull and Run the `todo` Docker Hub image:
 
 ```bash
-docker run -p 3000:3000 -v ./data:/data nickfedor/todo:latest
+docker run -p 3000:3000 -v todo.data:/data nickfedor/todo:latest
 ```
 
 Or the `todo` GitHub Container Registry image:
@@ -129,7 +129,7 @@ Images are available via either  [Docker Hub](https://hub.docker.com/r/nickfedor
 Semantically-versioned images are available with `v{major}.{minor}.{patch}`-specific tags: `v0`, `v0.1`, `v0.1.0`, and `latest`.
 Multi-platform images are available with platform-specific tags: `amd64-latest`, `arm64v8-latest`, `riscv64-latest`, etc.
 
-### Networking
+#### Networking
 
 The application is currently hardcoded to use port `3000`.
 Run the container with the desired port mapping to avoid conflicts, such as port `8080` instead:
@@ -141,7 +141,7 @@ docker run -p 8080:3000 -v todo.data:/data nickfedor/todo:latest
 - The `-p 8080:3000` flag maps host port 8080 to container port 3000.
 - The app will be available at <http://localhost:8080> in this configuration.
 
-### Storage
+#### Storage
 
 The application uses Badger DB for persistent storage, which is mounted to the container's `/data` volume mountpoint.
 If running via Docker, the image uses a default nonroot user of 1000:1000, so your storage location will need to use the corresponding permissions.
@@ -172,7 +172,9 @@ docker run  -p 3000:3000 -v ./data:/data nickfedor/todo:latest
 > You can also opt to run the container using a different `user:group`; however, this will still require ensuring correct filesystem permissions.
 > The use of a `1000:1000` default is an attempt at balancing security and convenience -- given the Docker default is `root` level access.
 
-### GitHub Releases [![Latest](https://img.shields.io/badge/Latest-2ea44f?style=flat-square)](https://github.com/nicholas-fedor/todo/releases/latest)
+### GitHub Releases 
+
+[![Latest](https://img.shields.io/badge/Latest-2ea44f?style=flat-square)](https://github.com/nicholas-fedor/todo/releases/latest)
 
 Prebuilt binaries are available for the following platforms:
 
