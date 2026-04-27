@@ -124,7 +124,6 @@ jobs:
           args: >-
             release
             --config build/goreleaser/${{ inputs.build-type }}.yaml
-            ${{ inputs.build-type == 'nightly' && '--snapshot' || '' }}
             --clean
             ${{ inputs.dry-run && '--skip=publish' || '' }}
         env:
@@ -132,25 +131,6 @@ jobs:
           DOCKER_NAMESPACE: ${{ inputs.docker_namespace }}
           GHCR_NAMESPACE: ${{ inputs.ghcr_namespace }}
           DRY_RUN: ${{ inputs.dry-run }}
-
-      - name: Upload binary SBOMs
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
-        with:
-          name: binary-sboms
-          path: ./dist/*.sbom.json
-          if-no-files-found: warn
-
-      - name: Generate source SBOM attestation
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26
-        with:
-          subject-checksums: ./dist/checksums.txt
-          sbom-path: ./dist/todo.src.tar.gz.sbom.json
-
-      - name: Generate artifact attestation for checksums
-        if: ${{ !inputs.dry-run }}
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26
-        with:
-          subject-checksums: ./dist/checksums.txt
 
       - name: Generate artifact attestation for digests
         if: ${{ !inputs.dry-run }}
