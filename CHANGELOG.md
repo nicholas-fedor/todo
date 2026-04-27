@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add skip validate flag for nightlies by @nicholas-fedor in [#81](https://github.com/nicholas-fedor/todo/pull/81)
 - Add sbom attestation subject-checksums path by @nicholas-fedor in [#68](https://github.com/nicholas-fedor/todo/pull/68)
 
 ### Changed
