@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Restore snapshot argument for nightly builds by @nicholas-fedor in [#75](https://github.com/nicholas-fedor/todo/pull/75)
 - Tighten up release and changelog configurations by @nicholas-fedor in [#65](https://github.com/nicholas-fedor/todo/pull/65)
 
 ### Chores
