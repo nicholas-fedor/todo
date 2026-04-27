@@ -31,11 +31,7 @@ project_name: "todo"
 # Verifiable Builds (Supply Chain Security)
 # https://goreleaser.com/customization/builds/verifiable_builds/
 ################################################################################
-gomod:
-  proxy: true
-  env:
-    - GOPROXY=https://proxy.golang.org,direct
-    - GOSUMDB=sum.golang.org
+# Skip verifiable builds for nightly image builds.
 
 ################################################################################
 # Go Binary Build Configuration
