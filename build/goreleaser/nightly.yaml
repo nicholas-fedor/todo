@@ -75,6 +75,14 @@ builds:
 
 ################################################################################
 # Binary Archive Configuration
+# https://goreleaser.com/customization/publish/scm/
+################################################################################
+# Skip release to GitHub for nightly releases
+release:
+  disable: true
+
+################################################################################
+# Binary Archive Configuration
 # https://goreleaser.com/customization/package/archives/
 ################################################################################
 # Skip building archives for nightly releases
