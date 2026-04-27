@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fix nightly build config and steps by @nicholas-fedor in [#77](https://github.com/nicholas-fedor/todo/pull/77)
 - Fix source sbom attestation path by @nicholas-fedor in [#70](https://github.com/nicholas-fedor/todo/pull/70)
 
 ## [0.1.2] - 2026-04-26
