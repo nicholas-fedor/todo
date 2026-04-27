@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update nightly build config by @nicholas-fedor in [#85](https://github.com/nicholas-fedor/todo/pull/85)
 - Correct quick start example by @nicholas-fedor in [#83](https://github.com/nicholas-fedor/todo/pull/83)
 - Omit verifiable build for nightlies by @nicholas-fedor in [#79](https://github.com/nicholas-fedor/todo/pull/79)
 - Restore snapshot argument for nightly builds by @nicholas-fedor in [#75](https://github.com/nicholas-fedor/todo/pull/75)
