@@ -27,13 +27,6 @@ version: 2
 # ################################################################################
 project_name: "todo"
 
-# ################################################################################
-# Release Configuration
-# https://goreleaser.com/customization/publish/scm/
-# ################################################################################
-release:
-  disable: true
-
 ################################################################################
 # Verifiable Builds (Supply Chain Security)
 # https://goreleaser.com/customization/builds/verifiable_builds/
@@ -88,40 +81,18 @@ builds:
 # Binary Archive Configuration
 # https://goreleaser.com/customization/package/archives/
 ################################################################################
-archives:
-  - formats: ["tar.gz"]
-    name_template: >-
-      {{- .ProjectName }}_
-      {{- if eq .Os "darwin" }}macOS
-      {{- else }}{{ .Os }}{{ end }}_
-      {{- if eq .Arch "amd64" }}amd64
-      {{- else if eq .Arch "386" }}i386
-      {{- else if eq .Arch "arm" }}armhf
-      {{- else if eq .Arch "arm64" }}arm64v8
-      {{- else if eq .Arch "riscv64" }}riscv64
-      {{- else }}{{ .Arch }}{{ end }}_
-      {{- .Version -}}
-    format_overrides:
-      - goos: windows
-        formats: ["zip"]
-    files:
-      - LICENSE
-    builds_info:
-      mtime: "{{ .CommitTimestamp }}"
+# Skip building archives for nightly releases
 
 ################################################################################
 # Source Archive Configuration
 ################################################################################
-source:
-  enabled: true
-  name_template: "todo.src"
+# Skip archive handling for nightly releases
 
 ################################################################################
 # Checksums Configuration
 # https://goreleaser.com/customization/package/checksum/
 ################################################################################
-checksum:
-  name_template: "checksums.txt"
+# Skip checksum handling for nightly releases
 
 ################################################################################
 # Docker Digests Configuration
@@ -136,15 +107,15 @@ docker_digest:
 ################################################################################
 dockers_v2:
   ##############################################################################
-  # Multi-platform manifest (all platforms) - non-prefixed dev tag only
+  # Multi-platform manifest (all platforms) - non-prefixed nightly tag only
   ##############################################################################
-  - id: "todo-manifest-dev"
+  - id: "todo-manifest-nightly"
     ids: ["todo-binary"]
     images:
       - "nickfedor/todo"
       - "ghcr.io/nicholas-fedor/todo"
     tags:
-      - "latest-dev"
+      - "latest-nightly"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/amd64
@@ -164,15 +135,15 @@ dockers_v2:
       org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
   ##############################################################################
-  # Platform-specific images - platform-prefixed dev tags only
+  # Platform-specific images - platform-prefixed nightly tags only
   ##############################################################################
-  - id: "todo-amd64-dev"
+  - id: "todo-amd64-nightly"
     ids: ["todo-binary"]
     images:
       - "nickfedor/todo"
       - "ghcr.io/nicholas-fedor/todo"
     tags:
-      - "amd64-dev"
+      - "amd64-nightly"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/amd64
@@ -187,13 +158,13 @@ dockers_v2:
       org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
       org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "todo-i386-dev"
+  - id: "todo-i386-nightly"
     ids: ["todo-binary"]
     images:
       - "nickfedor/todo"
       - "ghcr.io/nicholas-fedor/todo"
     tags:
-      - "i386-dev"
+      - "i386-nightly"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/386
@@ -208,13 +179,13 @@ dockers_v2:
       org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
       org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "todo-armhf-dev"
+  - id: "todo-armhf-nightly"
     ids: ["todo-binary"]
     images:
       - "nickfedor/todo"
       - "ghcr.io/nicholas-fedor/todo"
     tags:
-      - "armhf-dev"
+      - "armhf-nightly"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/arm/v6
@@ -229,13 +200,13 @@ dockers_v2:
       org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
       org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "todo-arm64v8-dev"
+  - id: "todo-arm64v8-nightly"
     ids: ["todo-binary"]
     images:
       - "nickfedor/todo"
       - "ghcr.io/nicholas-fedor/todo"
     tags:
-      - "arm64v8-dev"
+      - "arm64v8-nightly"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/arm64
@@ -250,13 +221,13 @@ dockers_v2:
       org.opencontainers.image.url: "https://hub.docker.com/r/nickfedor/todo"
       org.opencontainers.image.documentation: "https://github.com/nicholas-fedor/todo"
 
-  - id: "todo-riscv64-dev"
+  - id: "todo-riscv64-nightly"
     ids: ["todo-binary"]
     images:
       - "nickfedor/todo"
       - "ghcr.io/nicholas-fedor/todo"
     tags:
-      - "riscv64-dev"
+      - "riscv64-nightly"
     dockerfile: build/docker/Dockerfile
     platforms:
       - linux/riscv64
@@ -275,26 +246,13 @@ dockers_v2:
 # Software Bill of Materials (SBOM) Configuration
 # https://goreleaser.com/customization/sbom/
 ################################################################################
-sboms:
-  - id: binaries
-    artifacts: archive
-  - id: source
-    artifacts: source
+# Skip SBOM signing for nightlies
 
 ################################################################################
 # Signing Configuration (Cosign - Keyless OIDC)
 # https://goreleaser.com/customization/sign/
 ################################################################################
-signs:
-  - id: cosign-checksums
-    cmd: cosign
-    args:
-      - "sign-blob"
-      - "--bundle=${signature}"
-      - "${artifact}"
-      - "--yes"
-    artifacts: checksum
-    output: true
+# Skip checksum signing for nightlies
 
 ################################################################################
 # Docker Image Signing (Cosign)
