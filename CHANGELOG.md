@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Refactor clean cache by @nicholas-fedor in [#89](https://github.com/nicholas-fedor/todo/pull/89)
 - Change nightly image tag by @nicholas-fedor in [#87](https://github.com/nicholas-fedor/todo/pull/87)
 - Update nightly build config by @nicholas-fedor in [#85](https://github.com/nicholas-fedor/todo/pull/85)
 - Correct quick start example by @nicholas-fedor in [#83](https://github.com/nicholas-fedor/todo/pull/83)
@@ -34,6 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix nightly build config and steps by @nicholas-fedor in [#77](https://github.com/nicholas-fedor/todo/pull/77)
 - Fix source sbom attestation path by @nicholas-fedor in [#70](https://github.com/nicholas-fedor/todo/pull/70)
+
+### Removed
+
+- Remove redundant workflow by @nicholas-fedor in [#91](https://github.com/nicholas-fedor/todo/pull/91)
 
 ## [0.1.2] - 2026-04-26
 
