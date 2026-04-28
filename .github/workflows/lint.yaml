@@ -3,6 +3,13 @@ name: Lint
 on:
   workflow_dispatch:
   workflow_call:
+  pull_request:
+    paths:
+      - cmd/**
+      - internal/**
+      - go.mod
+      - go.sum
+      - main.go
 
 permissions:
   contents: read
