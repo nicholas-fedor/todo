@@ -2,6 +2,13 @@ name: Run tests and upload coverage
 
 on:
   workflow_call:
+  pull_request:
+    paths:
+      - cmd/**
+      - internal/**
+      - go.mod
+      - go.sum
+      - main.go
 
 permissions:
   contents: read
