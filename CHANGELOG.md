@@ -40,6 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- Remove unsupported flag option by @nicholas-fedor in [#96](https://github.com/nicholas-fedor/todo/pull/96)
+- Remove invalid skip checksum by @nicholas-fedor in [#94](https://github.com/nicholas-fedor/todo/pull/94)
 - Remove redundant workflow by @nicholas-fedor in [#91](https://github.com/nicholas-fedor/todo/pull/91)
 
 ## [0.1.2] - 2026-04-26
