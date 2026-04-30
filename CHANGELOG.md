@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/klauspost/compress to v1.18.6 by @renovate[bot] in [#108](https://github.com/nicholas-fedor/todo/pull/108)
 - Update securego/gosec action to v2.26.1 by @renovate[bot] in [#92](https://github.com/nicholas-fedor/todo/pull/92)
 - Update dependency @commitlint/cli to v20.5.2 by @renovate[bot] in [#60](https://github.com/nicholas-fedor/todo/pull/60)
 - Update module github.com/mattn/go-isatty to v0.0.22 by @renovate[bot] in [#74](https://github.com/nicholas-fedor/todo/pull/74)
