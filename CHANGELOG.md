@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Use proper GH actions glob pattern for tags by @nicholas-fedor in [#97](https://github.com/nicholas-fedor/todo/pull/97)
 - Refactor clean cache by @nicholas-fedor in [#89](https://github.com/nicholas-fedor/todo/pull/89)
 - Change nightly image tag by @nicholas-fedor in [#87](https://github.com/nicholas-fedor/todo/pull/87)
 - Update nightly build config by @nicholas-fedor in [#85](https://github.com/nicholas-fedor/todo/pull/85)
