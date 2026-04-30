@@ -126,7 +126,7 @@ jobs:
             --config build/goreleaser/${{ inputs.build-type }}.yaml
             ${{ inputs.build-type == 'nightly' && '--skip=validate,archive' || '' }}
             --clean
-            ${{ inputs.dry-run && '--skip=publish' || '' }}
+            ${{ inputs.dry-run && '--snapshot' || '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCKER_NAMESPACE: ${{ inputs.docker_namespace }}
