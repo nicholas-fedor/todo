@@ -74,7 +74,7 @@ builds:
     mod_timestamp: "{{ .CommitTimestamp }}"
 
 ################################################################################
-# Binary Archive Configuration
+# Release Configuration (SCM)
 # https://goreleaser.com/customization/publish/scm/
 ################################################################################
 # Skip release to GitHub for nightly releases
