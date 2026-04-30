@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Improve conditional by @nicholas-fedor in [#106](https://github.com/nicholas-fedor/todo/pull/106)
 - Improve last commit query by @nicholas-fedor in [#105](https://github.com/nicholas-fedor/todo/pull/105)
 - Correct release config header by @nicholas-fedor in [#103](https://github.com/nicholas-fedor/todo/pull/103)
 - Use snapshot flag instead of skip for dry runs by @nicholas-fedor in [#101](https://github.com/nicholas-fedor/todo/pull/101)
