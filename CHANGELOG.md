@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Improve last commit query by @nicholas-fedor in [#105](https://github.com/nicholas-fedor/todo/pull/105)
+- Correct release config header by @nicholas-fedor in [#103](https://github.com/nicholas-fedor/todo/pull/103)
 - Use snapshot flag instead of skip for dry runs by @nicholas-fedor in [#101](https://github.com/nicholas-fedor/todo/pull/101)
 - Use boolean coercion directly by @nicholas-fedor in [#99](https://github.com/nicholas-fedor/todo/pull/99)
 - Use proper GH actions glob pattern for tags by @nicholas-fedor in [#97](https://github.com/nicholas-fedor/todo/pull/97)
