@@ -84,7 +84,7 @@ jobs:
       id-token: write # For OIDC auth to Docker Hub and GHCR
     with:
       build-type: nightly # Nightly release
-      dry-run: ${{ fromJson(inputs.dry-run || 'false') }} # String to boolean, defaults false
+      dry-run: ${{ inputs.dry-run || false }} # Boolean, defaults false
       project_name: todo
       docker_namespace: nickfedor
       ghcr_namespace: nicholas-fedor
