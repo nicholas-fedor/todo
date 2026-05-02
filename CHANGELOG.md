@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update step-security/harden-runner action to v2.19.1 by @renovate[bot] in [#112](https://github.com/nicholas-fedor/todo/pull/112)
 - Update github/codeql-action digest to e46ed2c by @renovate[bot] in [#110](https://github.com/nicholas-fedor/todo/pull/110)
 - Update module github.com/klauspost/compress to v1.18.6 by @renovate[bot] in [#108](https://github.com/nicholas-fedor/todo/pull/108)
 - Update securego/gosec action to v2.26.1 by @renovate[bot] in [#92](https://github.com/nicholas-fedor/todo/pull/92)
