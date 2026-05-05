@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/valyala/fasthttp to v1.71.0 by @renovate[bot] in [#118](https://github.com/nicholas-fedor/todo/pull/118)
 - Lock file maintenance by @renovate[bot] in [#116](https://github.com/nicholas-fedor/todo/pull/116)
 - Update commitlint monorepo to v20.5.3 by @renovate[bot] in [#114](https://github.com/nicholas-fedor/todo/pull/114)
 - Update step-security/harden-runner action to v2.19.1 by @renovate[bot] in [#112](https://github.com/nicholas-fedor/todo/pull/112)
