@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/a-h/templ to v0.3.1020 by @renovate[bot] in [#139](https://github.com/nicholas-fedor/todo/pull/139)
 - Update nicholas-fedor/actionlint-action action to v1.0.3 by @renovate[bot] in [#138](https://github.com/nicholas-fedor/todo/pull/138)
 - Update nicholas-fedor/actionlint-action action to v1.0.2 by @renovate[bot] in [#137](https://github.com/nicholas-fedor/todo/pull/137)
 - Update nicholas-fedor/actionlint-action digest to 25b48e2 by @renovate[bot] in [#134](https://github.com/nicholas-fedor/todo/pull/134)
