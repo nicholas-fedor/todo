@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update dependency tailwindcss to v4.3.0 by @renovate[bot] in [#150](https://github.com/nicholas-fedor/todo/pull/150)
 - Update commitlint monorepo to v21 by @renovate[bot] in [#146](https://github.com/nicholas-fedor/todo/pull/146)
 - Update module github.com/templui/templui to v1.11.0 by @renovate[bot] in [#147](https://github.com/nicholas-fedor/todo/pull/147)
 - Update module github.com/gofiber/utils/v2 to v2.0.5 by @renovate[bot] in [#145](https://github.com/nicholas-fedor/todo/pull/145)
