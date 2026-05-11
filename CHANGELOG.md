@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/templui/templui to v1.11.0 by @renovate[bot] in [#147](https://github.com/nicholas-fedor/todo/pull/147)
+- Update module github.com/gofiber/utils/v2 to v2.0.5 by @renovate[bot] in [#145](https://github.com/nicholas-fedor/todo/pull/145)
 - Update module github.com/templui/templui to v1.10.1 by @renovate[bot] in [#143](https://github.com/nicholas-fedor/todo/pull/143)
 - Lock file maintenance by @renovate[bot] in [#141](https://github.com/nicholas-fedor/todo/pull/141)
 - Update module github.com/a-h/templ to v0.3.1020 by @renovate[bot] in [#139](https://github.com/nicholas-fedor/todo/pull/139)
