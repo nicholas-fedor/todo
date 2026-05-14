@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update step-security/harden-runner action to v2.19.2 by @renovate[bot] in [#154](https://github.com/nicholas-fedor/todo/pull/154)
 - Update module github.com/templui/templui to v1.11.1 by @renovate[bot] in [#152](https://github.com/nicholas-fedor/todo/pull/152)
 - Update dependency tailwindcss to v4.3.0 by @renovate[bot] in [#150](https://github.com/nicholas-fedor/todo/pull/150)
 - Update commitlint monorepo to v21 by @renovate[bot] in [#146](https://github.com/nicholas-fedor/todo/pull/146)
