@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update commitlint monorepo to v21.0.1 by @renovate[bot] in [#159](https://github.com/nicholas-fedor/todo/pull/159)
 - Update github/codeql-action digest to 9e0d7b8 by @renovate[bot] in [#158](https://github.com/nicholas-fedor/todo/pull/158)
 - Update step-security/harden-runner action to v2.19.3 by @renovate[bot] in [#156](https://github.com/nicholas-fedor/todo/pull/156)
 - Update step-security/harden-runner action to v2.19.2 by @renovate[bot] in [#154](https://github.com/nicholas-fedor/todo/pull/154)
