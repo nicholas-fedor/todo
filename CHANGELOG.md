@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update github/codeql-action digest to 9e0d7b8 by @renovate[bot] in [#158](https://github.com/nicholas-fedor/todo/pull/158)
+- Update step-security/harden-runner action to v2.19.3 by @renovate[bot] in [#156](https://github.com/nicholas-fedor/todo/pull/156)
 - Update step-security/harden-runner action to v2.19.2 by @renovate[bot] in [#154](https://github.com/nicholas-fedor/todo/pull/154)
 - Update module github.com/templui/templui to v1.11.1 by @renovate[bot] in [#152](https://github.com/nicholas-fedor/todo/pull/152)
 - Update dependency tailwindcss to v4.3.0 by @renovate[bot] in [#150](https://github.com/nicholas-fedor/todo/pull/150)
