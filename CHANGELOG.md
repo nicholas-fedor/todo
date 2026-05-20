@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/utils/v2 to v2.0.6 by @renovate[bot] in [#165](https://github.com/nicholas-fedor/todo/pull/165)
+- Update goreleaser/goreleaser-action digest to 5daf1e9 by @renovate[bot] in [#163](https://github.com/nicholas-fedor/todo/pull/163)
 - Lock file maintenance by @renovate[bot] in [#161](https://github.com/nicholas-fedor/todo/pull/161)
 - Update commitlint monorepo to v21.0.1 by @renovate[bot] in [#159](https://github.com/nicholas-fedor/todo/pull/159)
 - Update github/codeql-action digest to 9e0d7b8 by @renovate[bot] in [#158](https://github.com/nicholas-fedor/todo/pull/158)
