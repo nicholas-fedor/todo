@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/sys to v0.45.0 by @renovate[bot] in [#168](https://github.com/nicholas-fedor/todo/pull/168)
+- Update step-security/harden-runner action to v2.19.4 by @renovate[bot] in [#166](https://github.com/nicholas-fedor/todo/pull/166)
 - Update module github.com/gofiber/utils/v2 to v2.0.6 by @renovate[bot] in [#165](https://github.com/nicholas-fedor/todo/pull/165)
 - Update goreleaser/goreleaser-action digest to 5daf1e9 by @renovate[bot] in [#163](https://github.com/nicholas-fedor/todo/pull/163)
 - Lock file maintenance by @renovate[bot] in [#161](https://github.com/nicholas-fedor/todo/pull/161)
