@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Lock file maintenance by @renovate[bot] in [#178](https://github.com/nicholas-fedor/todo/pull/178)
+- Update module github.com/templui/templui to v1.11.2 by @renovate[bot] in [#177](https://github.com/nicholas-fedor/todo/pull/177)
 - Update github/codeql-action digest to 7211b7c by @renovate[bot] in [#176](https://github.com/nicholas-fedor/todo/pull/176)
 - Update docker/login-action digest to 650006c by @renovate[bot] in [#175](https://github.com/nicholas-fedor/todo/pull/175)
 - Update module github.com/gofiber/fiber/v3 to v3.3.0 by @renovate[bot] in [#173](https://github.com/nicholas-fedor/todo/pull/173)
