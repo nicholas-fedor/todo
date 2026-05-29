@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/mattn/go-colorable to v0.1.15 by @renovate[bot] in [#182](https://github.com/nicholas-fedor/todo/pull/182)
 - Update opentelemetry-go monorepo to v1.44.0 by @renovate[bot] in [#180](https://github.com/nicholas-fedor/todo/pull/180)
 - Lock file maintenance by @renovate[bot] in [#178](https://github.com/nicholas-fedor/todo/pull/178)
 - Update module github.com/templui/templui to v1.11.2 by @renovate[bot] in [#177](https://github.com/nicholas-fedor/todo/pull/177)
