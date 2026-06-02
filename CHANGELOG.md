@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update actions/checkout action to v6.0.3 by @renovate[bot] in [#191](https://github.com/nicholas-fedor/todo/pull/191)
+- Update github/codeql-action digest to 87557b9 by @renovate[bot] in [#190](https://github.com/nicholas-fedor/todo/pull/190)
 - Update securego/gosec action to v2.27.1 by @renovate[bot] in [#188](https://github.com/nicholas-fedor/todo/pull/188)
 - Update module github.com/templui/templui to v1.12.0 by @renovate[bot] in [#187](https://github.com/nicholas-fedor/todo/pull/187)
 - Update module github.com/gofiber/utils/v2 to v2.1.0 by @renovate[bot] in [#185](https://github.com/nicholas-fedor/todo/pull/185)
