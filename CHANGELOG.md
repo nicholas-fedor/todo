@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update securego/gosec action to v2.27.1 by @renovate[bot] in [#188](https://github.com/nicholas-fedor/todo/pull/188)
+- Update module github.com/templui/templui to v1.12.0 by @renovate[bot] in [#187](https://github.com/nicholas-fedor/todo/pull/187)
 - Update module github.com/gofiber/utils/v2 to v2.1.0 by @renovate[bot] in [#185](https://github.com/nicholas-fedor/todo/pull/185)
 - Update commitlint monorepo to v21.0.2 by @renovate[bot] in [#184](https://github.com/nicholas-fedor/todo/pull/184)
 - Update module github.com/mattn/go-colorable to v0.1.15 by @renovate[bot] in [#182](https://github.com/nicholas-fedor/todo/pull/182)
