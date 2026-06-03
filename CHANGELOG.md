@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update actions/checkout digest to df4cb1c by @renovate[bot] in [#196](https://github.com/nicholas-fedor/todo/pull/196)
 - Update go module directive to v1.26.4 by @renovate[bot] in [#195](https://github.com/nicholas-fedor/todo/pull/195)
 - Update module github.com/gofiber/schema to v1.7.2 by @renovate[bot] in [#193](https://github.com/nicholas-fedor/todo/pull/193)
 - Update actions/checkout action to v6.0.3 by @renovate[bot] in [#191](https://github.com/nicholas-fedor/todo/pull/191)
