@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update nicholas-fedor/actionlint-action action to v1.0.4 by @renovate[bot] in [#200](https://github.com/nicholas-fedor/todo/pull/200)
 - Update github/codeql-action digest to 8aad20d by @renovate[bot] in [#198](https://github.com/nicholas-fedor/todo/pull/198)
 - Update actions/checkout digest to df4cb1c by @renovate[bot] in [#196](https://github.com/nicholas-fedor/todo/pull/196)
 - Update go module directive to v1.26.4 by @renovate[bot] in [#195](https://github.com/nicholas-fedor/todo/pull/195)
