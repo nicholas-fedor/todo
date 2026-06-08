@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/sys to v0.46.0 by @renovate[bot] in [#205](https://github.com/nicholas-fedor/todo/pull/205)
 - Update nicholas-fedor/actionlint-action action to v1.0.5 by @renovate[bot] in [#203](https://github.com/nicholas-fedor/todo/pull/203)
 - Update nicholas-fedor/actionlint-action action to v1.0.4 by @renovate[bot] in [#200](https://github.com/nicholas-fedor/todo/pull/200)
 - Update github/codeql-action digest to 8aad20d by @renovate[bot] in [#198](https://github.com/nicholas-fedor/todo/pull/198)
