@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/crypto to v0.53.0 by @renovate[bot] in [#209](https://github.com/nicholas-fedor/todo/pull/209)
+- Update module golang.org/x/text to v0.38.0 by @renovate[bot] in [#207](https://github.com/nicholas-fedor/todo/pull/207)
 - Update module golang.org/x/sys to v0.46.0 by @renovate[bot] in [#205](https://github.com/nicholas-fedor/todo/pull/205)
 - Update nicholas-fedor/actionlint-action action to v1.0.5 by @renovate[bot] in [#203](https://github.com/nicholas-fedor/todo/pull/203)
 - Update nicholas-fedor/actionlint-action action to v1.0.4 by @renovate[bot] in [#200](https://github.com/nicholas-fedor/todo/pull/200)
