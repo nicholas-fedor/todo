@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/schema to v1.8.0 by @renovate[bot] in [#214](https://github.com/nicholas-fedor/todo/pull/214)
 - Update module github.com/dgraph-io/badger/v4 to v4.9.2 by @renovate[bot] in [#213](https://github.com/nicholas-fedor/todo/pull/213)
 - Update nicholas-fedor/actionlint-action action to v1.0.6 by @renovate[bot] in [#211](https://github.com/nicholas-fedor/todo/pull/211)
 - Lock file maintenance by @renovate[bot] in [#202](https://github.com/nicholas-fedor/todo/pull/202)
