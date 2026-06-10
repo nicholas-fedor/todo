@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update alpine docker digest to fa1b3b8 by @renovate[bot] in [#219](https://github.com/nicholas-fedor/todo/pull/219)
 - Update alpine docker digest to 4f4ba24 by @renovate[bot] in [#216](https://github.com/nicholas-fedor/todo/pull/216)
 - Update alpine docker tag to v3.24.0 by @renovate[bot] in [#217](https://github.com/nicholas-fedor/todo/pull/217)
 - Update module github.com/gofiber/schema to v1.8.0 by @renovate[bot] in [#214](https://github.com/nicholas-fedor/todo/pull/214)
