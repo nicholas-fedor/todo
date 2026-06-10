@@ -32,6 +32,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update alpine:3.24.0 docker digest to a2d49ea by @renovate[bot] in [#223](https://github.com/nicholas-fedor/todo/pull/223)
+- Update alpine docker digest to a2d49ea by @renovate[bot] in [#222](https://github.com/nicholas-fedor/todo/pull/222)
+- Update alpine:3.24.0 docker digest to 8ddefa9 by @renovate[bot] in [#220](https://github.com/nicholas-fedor/todo/pull/220)
 - Update alpine docker digest to fa1b3b8 by @renovate[bot] in [#219](https://github.com/nicholas-fedor/todo/pull/219)
 - Update alpine docker digest to 4f4ba24 by @renovate[bot] in [#216](https://github.com/nicholas-fedor/todo/pull/216)
 - Update alpine docker tag to v3.24.0 by @renovate[bot] in [#217](https://github.com/nicholas-fedor/todo/pull/217)
