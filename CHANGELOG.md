@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/net to v0.56.0 by @renovate[bot] in [#225](https://github.com/nicholas-fedor/todo/pull/225)
 - Update alpine:3.24.0 docker digest to a2d49ea by @renovate[bot] in [#223](https://github.com/nicholas-fedor/todo/pull/223)
 - Update alpine docker digest to a2d49ea by @renovate[bot] in [#222](https://github.com/nicholas-fedor/todo/pull/222)
 - Update alpine:3.24.0 docker digest to 8ddefa9 by @renovate[bot] in [#220](https://github.com/nicholas-fedor/todo/pull/220)
