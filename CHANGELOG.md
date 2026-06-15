@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update tailwindcss monorepo to v4.3.1 by @renovate[bot] in [#235](https://github.com/nicholas-fedor/todo/pull/235)
 - Update nicholas-fedor/actionlint-action action to v1.0.9 by @renovate[bot] in [#233](https://github.com/nicholas-fedor/todo/pull/233)
 - Lock file maintenance by @renovate[bot] in [#231](https://github.com/nicholas-fedor/todo/pull/231)
 - Update nicholas-fedor/actionlint-action action to v1.0.8 by @renovate[bot] in [#229](https://github.com/nicholas-fedor/todo/pull/229)
