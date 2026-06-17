@@ -32,6 +32,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update alpine docker digest to 28bd5fe by @renovate[bot] in [#240](https://github.com/nicholas-fedor/todo/pull/240)
+- Update alpine:3.24.1 docker digest to 28bd5fe by @renovate[bot] in [#241](https://github.com/nicholas-fedor/todo/pull/241)
+- Update alpine docker tag to v3.24.1 by @renovate[bot] in [#238](https://github.com/nicholas-fedor/todo/pull/238)
+- Update alpine docker digest to f5064d3 by @renovate[bot] in [#237](https://github.com/nicholas-fedor/todo/pull/237)
 - Update tailwindcss monorepo to v4.3.1 by @renovate[bot] in [#235](https://github.com/nicholas-fedor/todo/pull/235)
 - Update nicholas-fedor/actionlint-action action to v1.0.9 by @renovate[bot] in [#233](https://github.com/nicholas-fedor/todo/pull/233)
 - Lock file maintenance by @renovate[bot] in [#231](https://github.com/nicholas-fedor/todo/pull/231)
