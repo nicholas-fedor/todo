@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update nicholas-fedor/actionlint-action action to v1.0.13 by @renovate[bot] in [#248](https://github.com/nicholas-fedor/todo/pull/248)
 - Update nicholas-fedor/actionlint-action action to v1.0.12 by @renovate[bot] in [#246](https://github.com/nicholas-fedor/todo/pull/246)
 - Update nicholas-fedor/actionlint-action action to v1.0.10 by @renovate[bot] in [#244](https://github.com/nicholas-fedor/todo/pull/244)
 - Update actions/checkout action to v7 by @renovate[bot] in [#242](https://github.com/nicholas-fedor/todo/pull/242)
