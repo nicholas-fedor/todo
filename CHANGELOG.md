@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update nicholas-fedor/actionlint-action action to v1.0.10 by @renovate[bot] in [#244](https://github.com/nicholas-fedor/todo/pull/244)
+- Update actions/checkout action to v7 by @renovate[bot] in [#242](https://github.com/nicholas-fedor/todo/pull/242)
 - Update alpine docker digest to 28bd5fe by @renovate[bot] in [#240](https://github.com/nicholas-fedor/todo/pull/240)
 - Update alpine:3.24.1 docker digest to 28bd5fe by @renovate[bot] in [#241](https://github.com/nicholas-fedor/todo/pull/241)
 - Update alpine docker tag to v3.24.1 by @renovate[bot] in [#238](https://github.com/nicholas-fedor/todo/pull/238)
