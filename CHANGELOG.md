@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update nicholas-fedor/actionlint-action action to v1.0.14 by @renovate[bot] in [#252](https://github.com/nicholas-fedor/todo/pull/252)
 - Update actions/setup-go digest to 924ae3a by @renovate[bot] in [#250](https://github.com/nicholas-fedor/todo/pull/250)
 - Update nicholas-fedor/actionlint-action action to v1.0.13 by @renovate[bot] in [#248](https://github.com/nicholas-fedor/todo/pull/248)
 - Update nicholas-fedor/actionlint-action action to v1.0.12 by @renovate[bot] in [#246](https://github.com/nicholas-fedor/todo/pull/246)
