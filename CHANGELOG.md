@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/klauspost/compress to v1.18.7 by @renovate[bot] in [#268](https://github.com/nicholas-fedor/todo/pull/268)
 - Update module github.com/andybalholm/brotli to v1.2.2 by @renovate[bot] in [#266](https://github.com/nicholas-fedor/todo/pull/266)
 - Update module github.com/valyala/fasthttp to v1.72.0 by @renovate[bot] in [#267](https://github.com/nicholas-fedor/todo/pull/267)
 - Update goreleaser/goreleaser-action digest to f06c13b by @renovate[bot] in [#262](https://github.com/nicholas-fedor/todo/pull/262)
