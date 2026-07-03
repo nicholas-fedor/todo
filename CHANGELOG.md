@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update docker/login-action digest to af1e73f by @renovate[bot] in [#281](https://github.com/nicholas-fedor/todo/pull/281)
 - Update commitlint monorepo to v21.2.0 by @renovate[bot] in [#279](https://github.com/nicholas-fedor/todo/pull/279)
 - Lock file maintenance by @renovate[bot] in [#261](https://github.com/nicholas-fedor/todo/pull/261)
 - Update module github.com/gofiber/fiber/v3 to v3.4.0 by @renovate[bot] in [#276](https://github.com/nicholas-fedor/todo/pull/276)
