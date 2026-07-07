@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update go module directive to v1.26.5 by @renovate[bot] in [#296](https://github.com/nicholas-fedor/todo/pull/296)
 - Update module github.com/gofiber/schema to v1.8.1 by @renovate[bot] in [#295](https://github.com/nicholas-fedor/todo/pull/295)
 - Update step-security/harden-runner action to v2.20.0 by @renovate[bot] in [#293](https://github.com/nicholas-fedor/todo/pull/293)
 - Update module github.com/dgraph-io/ristretto/v2 to v2.4.1 by @renovate[bot] in [#291](https://github.com/nicholas-fedor/todo/pull/291)
