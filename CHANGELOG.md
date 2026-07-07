@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/dgraph-io/badger/v4 to v4.9.3 by @renovate[bot] in [#290](https://github.com/nicholas-fedor/todo/pull/290)
+- Update module golang.org/x/text to v0.39.0 by @renovate[bot] in [#288](https://github.com/nicholas-fedor/todo/pull/288)
 - Update nicholas-fedor/actionlint-action action to v1.0.18 by @renovate[bot] in [#285](https://github.com/nicholas-fedor/todo/pull/285)
 - Update nicholas-fedor/actionlint-action action to v1.0.17 by @renovate[bot] in [#283](https://github.com/nicholas-fedor/todo/pull/283)
 - Update docker/login-action digest to af1e73f by @renovate[bot] in [#281](https://github.com/nicholas-fedor/todo/pull/281)
