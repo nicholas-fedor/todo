@@ -32,6 +32,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/text to v0.40.0 by @renovate[bot] in [#304](https://github.com/nicholas-fedor/todo/pull/304)
+- Update module github.com/dgraph-io/badger/v4 to v4.9.4 by @renovate[bot] in [#303](https://github.com/nicholas-fedor/todo/pull/303)
+- Update module golang.org/x/sys to v0.47.0 by @renovate[bot] in [#301](https://github.com/nicholas-fedor/todo/pull/301)
+- Update github/codeql-action digest to 99df26d by @renovate[bot] in [#300](https://github.com/nicholas-fedor/todo/pull/300)
 - Update module github.com/dgraph-io/ristretto/v2 to v2.4.2 by @renovate[bot] in [#298](https://github.com/nicholas-fedor/todo/pull/298)
 - Update go module directive to v1.26.5 by @renovate[bot] in [#296](https://github.com/nicholas-fedor/todo/pull/296)
 - Update module github.com/gofiber/schema to v1.8.1 by @renovate[bot] in [#295](https://github.com/nicholas-fedor/todo/pull/295)
