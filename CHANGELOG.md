@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/net to v0.57.0 by @renovate[bot] in [#306](https://github.com/nicholas-fedor/todo/pull/306)
 - Update module golang.org/x/text to v0.40.0 by @renovate[bot] in [#304](https://github.com/nicholas-fedor/todo/pull/304)
 - Update module github.com/dgraph-io/badger/v4 to v4.9.4 by @renovate[bot] in [#303](https://github.com/nicholas-fedor/todo/pull/303)
 - Update module golang.org/x/sys to v0.47.0 by @renovate[bot] in [#301](https://github.com/nicholas-fedor/todo/pull/301)
