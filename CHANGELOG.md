@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/utils/v2 to v2.1.2 by @renovate[bot] in [#312](https://github.com/nicholas-fedor/todo/pull/312)
 - Update dependency typescript to v7 by @renovate[bot] in [#310](https://github.com/nicholas-fedor/todo/pull/310)
 - Update dependency @commitlint/cli to v21.2.1 by @renovate[bot] in [#308](https://github.com/nicholas-fedor/todo/pull/308)
 - Update module golang.org/x/net to v0.57.0 by @renovate[bot] in [#306](https://github.com/nicholas-fedor/todo/pull/306)
