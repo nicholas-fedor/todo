@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update dependency typescript to v7 by @renovate[bot] in [#310](https://github.com/nicholas-fedor/todo/pull/310)
 - Update dependency @commitlint/cli to v21.2.1 by @renovate[bot] in [#308](https://github.com/nicholas-fedor/todo/pull/308)
 - Update module golang.org/x/net to v0.57.0 by @renovate[bot] in [#306](https://github.com/nicholas-fedor/todo/pull/306)
 - Update module golang.org/x/text to v0.40.0 by @renovate[bot] in [#304](https://github.com/nicholas-fedor/todo/pull/304)
