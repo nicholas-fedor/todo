@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update securego/gosec action to v2.28.0 by @renovate[bot] in [#316](https://github.com/nicholas-fedor/todo/pull/316)
 - Lock file maintenance by @renovate[bot] in [#287](https://github.com/nicholas-fedor/todo/pull/287)
 - Update module github.com/gofiber/schema to v1.8.2 by @renovate[bot] in [#314](https://github.com/nicholas-fedor/todo/pull/314)
 - Update module github.com/gofiber/utils/v2 to v2.1.2 by @renovate[bot] in [#312](https://github.com/nicholas-fedor/todo/pull/312)
