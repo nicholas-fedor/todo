@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Lock file maintenance by @renovate[bot] in [#287](https://github.com/nicholas-fedor/todo/pull/287)
+- Update module github.com/gofiber/schema to v1.8.2 by @renovate[bot] in [#314](https://github.com/nicholas-fedor/todo/pull/314)
 - Update module github.com/gofiber/utils/v2 to v2.1.2 by @renovate[bot] in [#312](https://github.com/nicholas-fedor/todo/pull/312)
 - Update dependency typescript to v7 by @renovate[bot] in [#310](https://github.com/nicholas-fedor/todo/pull/310)
 - Update dependency @commitlint/cli to v21.2.1 by @renovate[bot] in [#308](https://github.com/nicholas-fedor/todo/pull/308)
