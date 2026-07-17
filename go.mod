@@ -3,7 +3,7 @@ module github.com/nicholas-fedor/todo
 go 1.26.5
 
 require (
-	github.com/Oudwins/tailwind-merge-go v0.2.1
+	github.com/Oudwins/tailwind-merge-go v0.2.2
 	github.com/a-h/templ v0.3.1020
 	github.com/dgraph-io/badger/v4 v4.9.4
 	github.com/gofiber/fiber/v3 v3.4.0
