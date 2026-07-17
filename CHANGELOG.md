@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/oudwins/tailwind-merge-go to v0.2.2 by @renovate[bot] in [#325](https://github.com/nicholas-fedor/todo/pull/325)
+- Update github/codeql-action digest to 7188fc3 by @renovate[bot] in [#324](https://github.com/nicholas-fedor/todo/pull/324)
 - Update actions/setup-go action to v7 by @renovate[bot] in [#320](https://github.com/nicholas-fedor/todo/pull/320)
 - Update module github.com/mattn/go-isatty to v0.0.23 by @renovate[bot] in [#321](https://github.com/nicholas-fedor/todo/pull/321)
 - Update module github.com/gofiber/utils/v2 to v2.2.0 by @renovate[bot] in [#318](https://github.com/nicholas-fedor/todo/pull/318)
