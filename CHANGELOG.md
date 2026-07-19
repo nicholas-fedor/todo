@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update dependency tailwindcss to v4.3.3 by @renovate[bot] in [#327](https://github.com/nicholas-fedor/todo/pull/327)
 - Update module github.com/oudwins/tailwind-merge-go to v0.2.2 by @renovate[bot] in [#325](https://github.com/nicholas-fedor/todo/pull/325)
 - Update github/codeql-action digest to 7188fc3 by @renovate[bot] in [#324](https://github.com/nicholas-fedor/todo/pull/324)
 - Update actions/setup-go action to v7 by @renovate[bot] in [#320](https://github.com/nicholas-fedor/todo/pull/320)
