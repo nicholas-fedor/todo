@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/schema to v1.8.3 by @renovate[bot] in [#329](https://github.com/nicholas-fedor/todo/pull/329)
 - Update dependency tailwindcss to v4.3.3 by @renovate[bot] in [#327](https://github.com/nicholas-fedor/todo/pull/327)
 - Update module github.com/oudwins/tailwind-merge-go to v0.2.2 by @renovate[bot] in [#325](https://github.com/nicholas-fedor/todo/pull/325)
 - Update github/codeql-action digest to 7188fc3 by @renovate[bot] in [#324](https://github.com/nicholas-fedor/todo/pull/324)
