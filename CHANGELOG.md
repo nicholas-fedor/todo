@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/go-logr/logr to v1.4.4 by @renovate[bot] in [#335](https://github.com/nicholas-fedor/todo/pull/335)
+- Update module github.com/klauspost/compress to v1.19.1 by @renovate[bot] in [#336](https://github.com/nicholas-fedor/todo/pull/336)
 - Update actions/checkout action to v7.0.1 by @renovate[bot] in [#333](https://github.com/nicholas-fedor/todo/pull/333)
 - Update actions/checkout digest to 3d3c42e by @renovate[bot] in [#332](https://github.com/nicholas-fedor/todo/pull/332)
 - Update module github.com/gofiber/schema to v1.8.3 by @renovate[bot] in [#329](https://github.com/nicholas-fedor/todo/pull/329)
