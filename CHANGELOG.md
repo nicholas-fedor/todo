@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/utils/v2 to v2.3.0 by @renovate[bot] in [#342](https://github.com/nicholas-fedor/todo/pull/342)
 - Update github/codeql-action digest to e4fba86 by @renovate[bot] in [#340](https://github.com/nicholas-fedor/todo/pull/340)
 - Update github/codeql-action digest to e064762 by @renovate[bot] in [#338](https://github.com/nicholas-fedor/todo/pull/338)
 - Update module github.com/go-logr/logr to v1.4.4 by @renovate[bot] in [#335](https://github.com/nicholas-fedor/todo/pull/335)
