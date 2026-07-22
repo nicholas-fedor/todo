@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update github/codeql-action digest to e064762 by @renovate[bot] in [#338](https://github.com/nicholas-fedor/todo/pull/338)
 - Update module github.com/go-logr/logr to v1.4.4 by @renovate[bot] in [#335](https://github.com/nicholas-fedor/todo/pull/335)
 - Update module github.com/klauspost/compress to v1.19.1 by @renovate[bot] in [#336](https://github.com/nicholas-fedor/todo/pull/336)
 - Update actions/checkout action to v7.0.1 by @renovate[bot] in [#333](https://github.com/nicholas-fedor/todo/pull/333)
