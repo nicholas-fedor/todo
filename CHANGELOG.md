@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Lock file maintenance by @renovate[bot] in [#331](https://github.com/nicholas-fedor/todo/pull/331)
 - Update docker/login-action digest to abd2ef4 by @renovate[bot] in [#351](https://github.com/nicholas-fedor/todo/pull/351)
 - Update ossf/scorecard-action action to v2.4.4 by @renovate[bot] in [#350](https://github.com/nicholas-fedor/todo/pull/350)
 - Update module github.com/dgraph-io/badger/v4 to v4.9.5 by @renovate[bot] in [#347](https://github.com/nicholas-fedor/todo/pull/347)
