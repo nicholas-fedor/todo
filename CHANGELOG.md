@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update docker/login-action digest to 371161b by @renovate[bot] in [#357](https://github.com/nicholas-fedor/todo/pull/357)
 - Update module github.com/valyala/fasthttp to v1.73.0 by @renovate[bot] in [#355](https://github.com/nicholas-fedor/todo/pull/355)
 - Lock file maintenance by @renovate[bot] in [#331](https://github.com/nicholas-fedor/todo/pull/331)
 - Update docker/login-action digest to abd2ef4 by @renovate[bot] in [#351](https://github.com/nicholas-fedor/todo/pull/351)
