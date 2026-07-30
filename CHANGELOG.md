@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update github/codeql-action digest to f205ea1 by @renovate[bot] in [#364](https://github.com/nicholas-fedor/todo/pull/364)
 - Update module github.com/gofiber/utils/v2 to v2.4.1 by @renovate[bot] in [#362](https://github.com/nicholas-fedor/todo/pull/362)
 - Update docker/login-action digest to dbcb813 by @renovate[bot] in [#361](https://github.com/nicholas-fedor/todo/pull/361)
 - Update module github.com/oudwins/tailwind-merge-go to v0.2.3 by @renovate[bot] in [#359](https://github.com/nicholas-fedor/todo/pull/359)
