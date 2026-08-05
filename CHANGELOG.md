@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update step-security/harden-runner action to v2.20.1 by @renovate[bot] in [#373](https://github.com/nicholas-fedor/todo/pull/373)
 - Update module github.com/templui/templui to v1.13.0 by @renovate[bot] in [#374](https://github.com/nicholas-fedor/todo/pull/374)
 - Update module github.com/dgraph-io/badger/v4 to v4.9.6 by @renovate[bot] in [#371](https://github.com/nicholas-fedor/todo/pull/371)
 - Update github/codeql-action digest to 5595cca by @renovate[bot] in [#369](https://github.com/nicholas-fedor/todo/pull/369)
