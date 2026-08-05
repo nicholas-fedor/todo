@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/dgraph-io/badger/v4 to v4.9.6 by @renovate[bot] in [#371](https://github.com/nicholas-fedor/todo/pull/371)
 - Update github/codeql-action digest to 5595cca by @renovate[bot] in [#369](https://github.com/nicholas-fedor/todo/pull/369)
 - Update opentelemetry-go monorepo to v1.45.0 by @renovate[bot] in [#368](https://github.com/nicholas-fedor/todo/pull/368)
 - Update github/codeql-action digest to d1ba80a by @renovate[bot] in [#366](https://github.com/nicholas-fedor/todo/pull/366)
