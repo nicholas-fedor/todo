@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module google.golang.org/protobuf to v1.36.12 by @renovate[bot] in [#381](https://github.com/nicholas-fedor/todo/pull/381)
+- Lock file maintenance by @renovate[bot] in [#354](https://github.com/nicholas-fedor/todo/pull/354)
 - Update module github.com/klauspost/compress to v1.19.2 by @renovate[bot] in [#377](https://github.com/nicholas-fedor/todo/pull/377)
 - Update step-security/harden-runner action to v2.20.1 by @renovate[bot] in [#373](https://github.com/nicholas-fedor/todo/pull/373)
 - Update module github.com/templui/templui to v1.13.0 by @renovate[bot] in [#374](https://github.com/nicholas-fedor/todo/pull/374)
