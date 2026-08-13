@@ -1,6 +1,6 @@
 module github.com/nicholas-fedor/todo
 
-go 1.26.5
+go 1.26.6
 
 require (
 	github.com/Oudwins/tailwind-merge-go v0.2.3
