@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module golang.org/x/net to v0.58.0 by @renovate[bot] in [#387](https://github.com/nicholas-fedor/todo/pull/387)
+- Update module golang.org/x/text to v0.41.0 by @renovate[bot] in [#385](https://github.com/nicholas-fedor/todo/pull/385)
 - Update module golang.org/x/crypto to v0.55.0 by @renovate[bot] in [#384](https://github.com/nicholas-fedor/todo/pull/384)
 - Update module github.com/gofiber/schema to v1.8.4 by @renovate[bot] in [#382](https://github.com/nicholas-fedor/todo/pull/382)
 - Update module google.golang.org/protobuf to v1.36.12 by @renovate[bot] in [#381](https://github.com/nicholas-fedor/todo/pull/381)
