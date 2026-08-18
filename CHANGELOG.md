@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/templui/templui to v1.13.1 by @renovate[bot] in [#398](https://github.com/nicholas-fedor/todo/pull/398)
 - Update commitlint monorepo to v21.2.2 by @renovate[bot] in [#396](https://github.com/nicholas-fedor/todo/pull/396)
 - Update step-security/harden-runner action to v2.21.0 by @renovate[bot] in [#394](https://github.com/nicholas-fedor/todo/pull/394)
 - Update module github.com/gofiber/fiber/v3 to v3.5.0 by @renovate[bot] in [#392](https://github.com/nicholas-fedor/todo/pull/392)
