@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update securego/gosec action to v2.29.0 by @renovate[bot] in [#408](https://github.com/nicholas-fedor/todo/pull/408)
 - Update opentelemetry-go monorepo to v1.46.0 by @renovate[bot] in [#407](https://github.com/nicholas-fedor/todo/pull/407)
 - Update module github.com/gofiber/utils/v2 to v2.4.2 by @renovate[bot] in [#406](https://github.com/nicholas-fedor/todo/pull/406)
 - Update github/codeql-action digest to db488dd by @renovate[bot] in [#403](https://github.com/nicholas-fedor/todo/pull/403)
