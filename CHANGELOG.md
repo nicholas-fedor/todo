@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/andybalholm/brotli to v1.2.3 by @renovate[bot] in [#412](https://github.com/nicholas-fedor/todo/pull/412)
 - Update github/codeql-action digest to cdf488f by @renovate[bot] in [#410](https://github.com/nicholas-fedor/todo/pull/410)
 - Update securego/gosec action to v2.29.0 by @renovate[bot] in [#408](https://github.com/nicholas-fedor/todo/pull/408)
 - Update opentelemetry-go monorepo to v1.46.0 by @renovate[bot] in [#407](https://github.com/nicholas-fedor/todo/pull/407)
