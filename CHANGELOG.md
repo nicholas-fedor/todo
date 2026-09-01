@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update orhun/git-cliff-action digest to 3d96a18 by @renovate[bot] in [#418](https://github.com/nicholas-fedor/todo/pull/418)
 - Update step-security/harden-runner action to v2.21.1 by @renovate[bot] in [#416](https://github.com/nicholas-fedor/todo/pull/416)
 - Update module github.com/templui/templui to v1.13.2 by @renovate[bot] in [#414](https://github.com/nicholas-fedor/todo/pull/414)
 - Update module github.com/andybalholm/brotli to v1.2.3 by @renovate[bot] in [#412](https://github.com/nicholas-fedor/todo/pull/412)
