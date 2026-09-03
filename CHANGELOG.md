@@ -32,6 +32,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/utils/v2 to v2.4.3 by @renovate[bot] in [#425](https://github.com/nicholas-fedor/todo/pull/425)
+- Update module github.com/klauspost/compress to v1.20.0 by @renovate[bot] in [#424](https://github.com/nicholas-fedor/todo/pull/424)
+- Update go module directive to v1.27.1 by @renovate[bot] in [#422](https://github.com/nicholas-fedor/todo/pull/422)
 - Update module github.com/gofiber/schema to v1.8.5 by @renovate[bot] in [#419](https://github.com/nicholas-fedor/todo/pull/419)
 - Update orhun/git-cliff-action digest to 3d96a18 by @renovate[bot] in [#418](https://github.com/nicholas-fedor/todo/pull/418)
 - Update step-security/harden-runner action to v2.21.1 by @renovate[bot] in [#416](https://github.com/nicholas-fedor/todo/pull/416)
