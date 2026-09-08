@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/gofiber/schema to v1.8.6 by @renovate[bot] in [#433](https://github.com/nicholas-fedor/todo/pull/433)
 - Update module github.com/gofiber/utils/v2 to v2.5.1 by @renovate[bot] in [#430](https://github.com/nicholas-fedor/todo/pull/430)
 - Update module github.com/valyala/fasthttp to v1.74.0 by @renovate[bot] in [#431](https://github.com/nicholas-fedor/todo/pull/431)
 - Update module github.com/gofiber/utils/v2 to v2.5.0 by @renovate[bot] in [#428](https://github.com/nicholas-fedor/todo/pull/428)
