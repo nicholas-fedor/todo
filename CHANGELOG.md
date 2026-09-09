@@ -32,6 +32,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update github/codeql-action digest to b96794f by @renovate[bot] in [#440](https://github.com/nicholas-fedor/todo/pull/440)
+- Update module golang.org/x/net to v0.59.0 by @renovate[bot] in [#439](https://github.com/nicholas-fedor/todo/pull/439)
+- Update module golang.org/x/crypto to v0.57.0 by @renovate[bot] in [#438](https://github.com/nicholas-fedor/todo/pull/438)
+- Update module golang.org/x/text to v0.42.0 by @renovate[bot] in [#437](https://github.com/nicholas-fedor/todo/pull/437)
+- Update module golang.org/x/sys to v0.48.0 by @renovate[bot] in [#434](https://github.com/nicholas-fedor/todo/pull/434)
 - Update module github.com/gofiber/schema to v1.8.6 by @renovate[bot] in [#433](https://github.com/nicholas-fedor/todo/pull/433)
 - Update module github.com/gofiber/utils/v2 to v2.5.1 by @renovate[bot] in [#430](https://github.com/nicholas-fedor/todo/pull/430)
 - Update module github.com/valyala/fasthttp to v1.74.0 by @renovate[bot] in [#431](https://github.com/nicholas-fedor/todo/pull/431)
