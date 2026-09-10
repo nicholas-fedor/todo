@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Chores
 
+- Update module github.com/molecule-man/go-brrr to v1.1.0 by @renovate[bot] in [#441](https://github.com/nicholas-fedor/todo/pull/441)
 - Update github/codeql-action digest to b96794f by @renovate[bot] in [#440](https://github.com/nicholas-fedor/todo/pull/440)
 - Update module golang.org/x/net to v0.59.0 by @renovate[bot] in [#439](https://github.com/nicholas-fedor/todo/pull/439)
 - Update module golang.org/x/crypto to v0.57.0 by @renovate[bot] in [#438](https://github.com/nicholas-fedor/todo/pull/438)
